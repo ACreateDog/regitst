@@ -1,0 +1,141 @@
+<extend name="Base:base"/>
+<block name="css_link">
+    <link href="__PUBLIC__/assets/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <style>
+        #simpledatatable_filter{
+            float: right;
+            margin-top: -30px;
+        }
+    </style>
+</block>
+<block name="main">
+    <div class="widget">
+        <div class="widget-header ">
+            <span class="widget-caption">历史记录</span>
+            <div class="widget-buttons">
+                <a href="#" data-toggle="maximize">
+                    <i class="fa fa-expand"></i>
+                </a>
+                <a href="#" data-toggle="collapse">
+                    <i class="fa fa-minus"></i>
+                </a>
+            </div>
+        </div>
+        <div class="widget-body">
+            <div class="btn-group">
+                <a type="button" id="export" class="btn btn-default" href="{:U('Enter/pub_studnet_info_export')}?type=3">
+                    <i class="fa fa-download"></i>导出
+                </a>
+            </div>
+            <table class="table table-striped table-bordered table-hover" id="simpledatatable">
+                <thead>
+                <tr>
+                    <th>
+                        序号
+                    </th>
+                    <th>
+                        学籍号码
+                    </th>
+                    <th>
+                        学生姓名
+                    </th>
+                    <th>
+                        性别
+                    </th>
+                    <th>
+                        生源类型
+                    </th>
+                    <th>
+                        毕业小学
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                    <foreach name="data" item="vo" key="k">
+                        <tr>
+                            <td>
+                                {$k + 1}
+                            </td>
+                            <td>
+                                {$vo.sid_num}
+                            </td>
+                            <td>
+                                <a href="{:U('Register/student')}?student={$vo.sid}">{$vo['stu_name']}</a>
+                            </td>
+                            <td>
+                                <if condition="$vo.sex == 0 ">男<else /> 女</if>
+                            </td>
+                            <td class="center ">
+                                <if condition="$vo.origin == 0">学区生
+                                    <elseif condition="$vo.origin == 1"/>统筹生
+                                    <elseif condition="$vo.status == 3"/>调剂生
+                                </if>
+                            </td>
+                            <td class="center ">
+                                <if condition="($vo.drank == '' or $vo.drank == 1)">{$vo.original_school}
+                                    <else/>{$vo.oname}
+                                </if>
+                            </td>
+                        </tr>
+                    </foreach>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</block>
+<block name="js_link">
+    <script src="__PUBLIC__/assets/js/datatable/jquery.dataTables.min.js"></script>
+    <script src="__PUBLIC__/assets/js/datatable/ZeroClipboard.js"></script>
+    <script src="__PUBLIC__/assets/js/datatable/dataTables.tableTools.min.js"></script>
+    <script src="__PUBLIC__/assets/js/datatable/dataTables.bootstrap.min.js"></script>
+    <script>
+        $(function(){
+            var table = set_data_table("simpledatatable");//实例化表
+            function set_data_table(table){
+                var table = $('#'+table).DataTable({
+                    "sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
+                    "iDisplayLength": 10,
+                    "lengthChange": false,
+                    ordering:  true,
+                    "bFilter":true,
+                    "oTableTools": {
+                        "aButtons": [
+                            //"copy", "csv", "xls", "pdf", "print"
+                        ],
+                        "sSwfPath": "assets/swf/copy_csv_xls_pdf.swf"
+                    },
+                    "language": {
+                        "search": "",
+                        "sLengthMenu": "_MENU_",
+                    },
+                    "oLanguage":{
+                        "sZeroRecords" : "没有您要搜索的内容",
+                        "sSearch" : "",
+                        "oPaginate": {
+                            "sPrevious": "<",
+                            "sNext": ">"
+                        }
+                    },
+                    "aoColumns": [
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ],
+                    "aaSorting": [],
+                    "infoCallback": pageInfo
+                });
+                return table;
+            }
+            $("#export").click(function(){
+                var count = table.rows().data().length;
+                if(count <= 0){
+                    alert_info('warning',"提示","没有任何数据");
+                    return false;
+                }
+            })
+        })
+    </script>
+</block>

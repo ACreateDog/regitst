@@ -1,0 +1,20 @@
+
+.pull-left-env {
+    margin-left: 22px;
+}
+.pull-right-env {
+    float: left!important;
+    margin-left: 24px;
+}
+
+.avatar {
+    border-left: 0px !important;
+}
+
+@media only screen and (max-width: 530px) {
+    .navbar .navbar-brand {
+        /*padding-left: 72px;*/
+        width: 100%;
+        text-align: center;
+    }
+}

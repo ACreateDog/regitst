@@ -1,0 +1,358 @@
+[ 2016-05-29T10:02:51+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilreginfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000071s ]
+INFO: [ app_init ] --END-- [ RunTime:0.036792s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.014404s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014606s ]
+
+[ 2016-05-29T10:02:51+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilreginfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.036790s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.014325s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014587s ]
+
+[ 2016-05-29T10:02:51+08:00 ] ::1 /register_system/index.php/Admin/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001887s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000789s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000926s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.013195s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.013377s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.089710s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.089866s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.012810s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.012954s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.016269s ]
+INFO: [ app_end ] --END-- [ RunTime:0.016428s ]
+
+[ 2016-05-29T10:02:52+08:00 ] ::1 /register_system/index.php/Admin/Login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000932s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001482s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001716s ]
+
+[ 2016-05-29T10:03:01+08:00 ] ::1 /register_system/index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000483s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000755s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000880s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.1249s ]
+SQL: SELECT `id`,`pass`,`oid` FROM `user` WHERE `account` = '4567891' AND `status` = 0 LIMIT 1   [ RunTime:0.0678s ]
+SQL: SHOW COLUMNS FROM `organ` [ RunTime:0.0049s ]
+SQL: SELECT `name`,`rank`,`pid` FROM `organ` WHERE `id` = 1 AND `status` = 0 LIMIT 1   [ RunTime:0.0254s ]
+INFO: Login => user_id :12name :新乡市
+NOTIC: [2] Missing argument 1 for Admin\Controller\LoginController::json_response(), called in D:\wamp\www\register_system\Application\Admin\Controller\LoginController.class.php on line 63 and defined D:\wamp\www\register_system\Application\Admin\Controller\LoginController.class.php 第 87 行.
+
+[ 2016-05-29T10:03:02+08:00 ] ::1 /register_system/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000466s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000775s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000944s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0485s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `organ` [ RunTime:0.0127s ]
+SQL: SELECT `name` FROM `organ` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined property: Admin\Model\IndexModel::$oids D:\wamp\www\register_system\Application\Admin\Model\IndexModel.class.php 第 103 行.
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0054s ]
+SQL: SELECT count(*) as count FROM `student` WHERE `origin` = 1 AND `status` = 1 AND `oid` > 0  [ RunTime:0.0406s ]
+SQL: SELECT count(*) as count FROM `student` WHERE `origin` = 0 AND `status` = 1 AND `oid` > 0  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0049s ]
+SQL: SELECT count(*) as count FROM `register` INNER JOIN student on register.sid = student.id  WHERE register.status <> 1 AND student.status = 1 AND student.oid > 0  [ RunTime:0.0223s ]
+SQL: SELECT count(*) as count FROM `register` INNER JOIN student on register.sid = student.id  WHERE register.status <> 1 AND student.status = 1 AND student.oid > 0 AND ( (pub_release = 1 and pub_status= 1) or register.status = 3 )  [ RunTime:0.0004s ]
+SQL: SELECT count(*) as count FROM `register` INNER JOIN student on register.sid = student.id  WHERE register.status <> 1 AND student.status = 1 AND student.oid > 0 AND `lot_release` = 1 AND `civil_release` = 1 AND `civil_status` = 2  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0046s ]
+SQL: SELECT `register_end_time` FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `introduction` FROM `organ` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000208s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000460s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 210 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 210 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 210 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 210 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.181241s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.181385s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000509s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000641s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002026s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002234s ]
+
+[ 2016-05-29T10:03:02+08:00 ] ::1 /register_system/index.php/Admin/Index/notify_info.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000808s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001367s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001606s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0079s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [2] Missing argument 1 for Admin\Controller\BaseController::json_response(), called in D:\wamp\www\register_system\Application\Admin\Controller\IndexController.class.php on line 116 and defined D:\wamp\www\register_system\Application\Admin\Controller\BaseController.class.php 第 48 行.
+
+[ 2016-05-29T10:03:04+08:00 ] ::1 /register_system/index.php/Admin/Enter/lot_orginfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000465s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001077s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001285s ]
+NOTIC: [8] Undefined index: lot_orginfo D:\wamp\www\register_system\Application\Admin\Controller\BaseController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0063s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`origin`,`sex`,`sid_num`,organ.name as sch_name,`original_school`,student.phone as phone,`civil_status`,`lot_release`,`civil_release`,register.status FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on civil_junior = organ.id  WHERE `civil_junior` <> '0' AND student.status = 1 ORDER BY register.lot_release asc,civil_status  [ RunTime:0.0312s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000278s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000413s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 203 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 203 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 203 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 203 行.
+NOTIC: [8] Undefined variable: organization D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 326 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.063148s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063406s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000622s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000835s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000707s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000863s ]
+
+[ 2016-05-29T11:09:53+08:00 ] ::1 /register_system/index.php/Admin/Enter/lot_orginfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000522s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000815s ]
+NOTIC: [8] Undefined index: lot_orginfo D:\wamp\www\register_system\Application\Admin\Controller\BaseController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0051s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`origin`,`sex`,`sid_num`,organ.name as sch_name,`original_school`,student.phone as phone,`civil_status`,`lot_release`,`civil_release`,register.status FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on civil_junior = organ.id  WHERE `civil_junior` <> '0' AND student.status = 1 ORDER BY register.lot_release asc,civil_status  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000259s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000398s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 203 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 203 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 203 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 203 行.
+NOTIC: [8] Undefined variable: organization D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 326 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023742s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023903s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000531s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000656s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000663s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000784s ]
+
+[ 2016-05-29T11:11:40+08:00 ] ::1 /register_system/index.php/Admin/Register/student_info.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000592s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000742s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000877s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0054s ]
+SQL: SELECT a.name as class,a.rank as crank,b.rank as srank,b.name as school,s.original_school,s.id,s.sex,s.name,s.sid_num,s.origin,s.account,s.address,s.status as s_status,s.phone,s.updatetime as s_updatetime,r.updatetime as r_updatetime,r.pub_junior,r.civil_junior,r.pub_status,r.pub_release,r.civil_status,r.civil_release,r.lot_release,r.assign_junior,r.status,r.id as register_id FROM student as s left join organ as a on s.oid=a.id left join organ as b on a.pid=b.id INNER JOIN register as r on r.sid=s.id  WHERE ( r.status!=1 and s.status!=2 and s.oid=1 )  [ RunTime:0.0314s ]
+SQL: SHOW COLUMNS FROM `organ` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `organ` [ RunTime:0.0051s ]
+SQL: SELECT `id`,`name`,`rank` FROM `organ` WHERE `status` = 0 AND `rank` IN (3,4)  [ RunTime:0.0473s ]
+NOTIC: [8] Undefined index: updatetime D:\wamp\www\register_system\Application\Admin\Controller\RegisterController.class.php 第 717 行.
+SQL: SELECT `id`,`name`,`rank` FROM `organ` WHERE `status` = 0 AND `rank` IN (3,4)  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000762s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001383s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\608f79eef5a6bac92748fe7d92d9b0bb.php 第 192 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\608f79eef5a6bac92748fe7d92d9b0bb.php 第 192 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\608f79eef5a6bac92748fe7d92d9b0bb.php 第 192 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\608f79eef5a6bac92748fe7d92d9b0bb.php 第 192 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.079878s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.080195s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001288s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001574s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001761s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002056s ]
+
+[ 2016-05-29T11:11:42+08:00 ] ::1 /register_system/index.php/Admin/Register/student/student/8.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000530s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000661s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0056s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0061s ]
+SQL: SELECT s.*,o2.name as school FROM student as s left join organ as o1 on o1.id=s.oid left join organ as o2 on o2.id=o1.pid  WHERE s.id = '8' AND s.status <> 2 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0059s ]
+SQL: SELECT r.civil_junior,o.name as civil_junior_name,r.pub_junior,o1.name as pub_junior_name FROM register as r left join organ as o on o.id=r.civil_junior left join organ as o1 on o1.id=r.pub_junior  WHERE ( r.sid=8 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `guardian` [ RunTime:0.0087s ]
+SQL: SHOW COLUMNS FROM `guardian` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `guardian` WHERE ( student_id=8 )  [ RunTime:0.0004s ]
+SQL: SELECT r.id,r.pub_status,r.civil_status,r.lot_release,r.civil_release,r.pub_release,r.civil_junior as civil_junior_id,r.pub_junior as pub_junior_id,r.status,o1.name as pub_junior,o2.name as civil_junior,o3.name as assign_junior FROM register as r left join organ as o1 on r.pub_junior=o1.id left join organ as o2 on r.civil_junior=o2.id left join organ as o3 on r.assign_junior=o3.id  WHERE ( r.sid=8 ) ORDER BY r.updatetime asc  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `reject` [ RunTime:0.0079s ]
+SQL: SHOW COLUMNS FROM `reject` [ RunTime:0.0058s ]
+SQL: SELECT re.register_id,re.school_id,re.reason FROM reject as  re INNER JOIN register as r on r.id=re.register_id  WHERE ( r.sid=8 )  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000396s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000547s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\6820e1a030a4346b8240552e8b234095.php 第 191 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\6820e1a030a4346b8240552e8b234095.php 第 191 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\6820e1a030a4346b8240552e8b234095.php 第 191 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\6820e1a030a4346b8240552e8b234095.php 第 191 行.
+NOTIC: [8] Undefined variable: default D:\wamp\www\register_system\Application\Runtime\Cache\Admin\6820e1a030a4346b8240552e8b234095.php 第 230 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.065988s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.066122s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000547s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000667s ]
+
+[ 2016-05-29T11:12:07+08:00 ] ::1 /register_system/index.php/Admin/Login/logout.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000508s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001113s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003324s ]
+INFO: Logout => user_id :12name :新乡市
+
+[ 2016-05-29T11:12:07+08:00 ] ::1 /register_system/index.php/Admin/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000484s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001099s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001307s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000276s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011119s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011261s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000614s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000805s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001532s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001730s ]
+
+[ 2016-05-29T11:12:07+08:00 ] ::1 /register_system/index.php/Admin/Login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000804s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000827s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000980s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000954s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001172s ]
+
+[ 2016-05-29T11:12:39+08:00 ] ::1 /register_system/index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000647s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000763s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0404s ]
+SQL: SELECT `id`,`pass`,`oid` FROM `user` WHERE `account` = 'G543219879876543211' AND `status` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `organ` [ RunTime:0.0046s ]
+SQL: SELECT `name`,`rank`,`pid` FROM `organ` WHERE `id` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000725s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000832s ]
+
+[ 2016-05-29T11:12:39+08:00 ] ::1 /register_system/index.php/Admin/Login/verify.html?0.009382982558846953
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000541s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000717s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000720s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000869s ]
+
+[ 2016-05-29T11:13:09+08:00 ] ::1 /register_system/index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000483s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000689s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000809s ]
+
+[ 2016-05-29T11:13:09+08:00 ] ::1 /register_system/index.php/Admin/Login/verify.html?0.2624609582252795
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000739s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000704s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001526s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001701s ]
+
+[ 2016-05-29T11:13:14+08:00 ] ::1 /register_system/index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000461s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000708s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000854s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0122s ]
+SQL: SELECT `id`,`pass`,`oid` FROM `user` WHERE `account` = 'G543219879876543211' AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organ` [ RunTime:0.0044s ]
+SQL: SELECT `name`,`rank`,`pid` FROM `organ` WHERE `id` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000712s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000856s ]
+
+[ 2016-05-29T11:13:15+08:00 ] ::1 /register_system/index.php/Admin/Login/verify.html?0.6339520099190226
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000494s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000780s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000973s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001810s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002638s ]
+

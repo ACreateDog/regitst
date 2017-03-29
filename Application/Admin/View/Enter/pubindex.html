@@ -1,0 +1,141 @@
+<extend name="Base:base"/>
+<block name="css_link">
+    <link href="__PUBLIC__/assets/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <style>
+        .profile-container .profile-header .profile-info .header-information{
+            max-height: 100px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</block>
+<block name="main">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="profile-container">
+                <div class="profile-header row">
+                    <div class="col-lg-2 col-md-4 col-sm-12 text-center">
+                        <img src="__PUBLIC__/assets/img/avatars/mschool.jpg" alt="" class="header-avatar" />
+                    </div>
+                    <div class="col-lg-5 col-md-8 col-sm-12 profile-info">
+                        <div class="header-fullname">{$data['schname']}</div>
+                        <div class="header-information">
+                            {$data['introduction']}
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12 profile-stats">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 stats-col">
+                                <div class="stats-value pink">{$data['adopt']}</div>
+                                <div class="stats-title">已录人数</div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 stats-col">
+                                <div class="stats-value pink">{$data['fail']}</div>
+                                <div class="stats-title">待审人数</div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 stats-col">
+                                <div class="stats-value pink">{$data['reginfo']}</div>
+                                <div class="stats-title">报名人数</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 inlinestats-col">
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <i class="glyphicon glyphicon-map-marker"></i>
+                                报名截止时间：{$enter_time} <empty name="ex_time">时间已过<else/>还有 {$ex_time} 天</empty>
+                            </div>
+                            <!--<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 inlinestats-col">-->
+                                <!--Rate: <strong>$250</strong>-->
+                            <!--</div>-->
+                            <!--<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 inlinestats-col">-->
+                                <!--Age: <strong>24</strong>-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-body">
+                    <div class="col-lg-12">
+                        <div class="tabbable">`
+                            <div class="tab-content tabs-flat">
+                                    <div class="databox databox-xxlg databox-inverted databox-vertical databox-shadowed databox-graded">
+                                        <div class="databox-top padding-10">
+                                            <div id="pie-chart-bandwidth" class="chart chart" style="padding: 0px; position: relative;"><canvas class="flot-base" width="219" height="220" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 219px; height: 220px;"></canvas><canvas class="flot-overlay" width="219" height="220" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 219px; height: 220px;"></canvas></div>
+                                            <div class="flot-donut-caption">
+                                                <span class="databox-number lightcarbon no-margin">{$data['reginfo']}</span>
+                                                <span class="databox-text sonic-silver  no-margin">报名人数</span>
+                                            </div>
+                                        </div>
+                                        <div class="databox-bottom no-padding bg-white bordered bordered-platinum">
+                                            <div class="databox-row row-12 no-padding">
+                                                <div class="databox-cell cell-4 no-padding text-align-center bordered-bottom-5 bordered-sky">
+                                                    <span class="databox-title lightcarbon no-margin"><i class="menu-icon glyphicon glyphicon-thumbs-up"></i></span>
+                                                    <span class="databox-text sonic-silver  no-margin">已录人数:{$data['adopt']}</span>
+                                                </div>
+                                                <div class="databox-cell cell-4 no-padding text-align-center bordered-bottom-5 bordered-yellow">
+                                                    <span class="databox-title lightcarbon no-margin"><i class="menu-icon glyphicon glyphicon-check"></i></span>
+                                                    <span class="databox-text sonic-silver  no-margin">待审人数:{$data['fail']}</span>
+                                                </div>
+                                                <div class="databox-cell cell-4 no-padding text-align-center bordered-bottom-5 bordered-pink">
+                                                    <span class="databox-title lightcarbon no-margin"><i class="glyphicon glyphicon-remove"></i></span>
+                                                    <span class="databox-text sonic-silver no-margin">拒绝人数:{$data['annals']}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" value="{:U('Index/notify_fail')}" id="notify-info">
+</block>
+<block name="js_link">
+    <script src="__PUBLIC__/assets/js/charts/flot/jquery.flot.js"></script>
+    <script src="__PUBLIC__/assets/js/charts/flot/jquery.flot.resize.js"></script>
+    <script src="__PUBLIC__/assets/js/charts/flot/jquery.flot.pie.js"></script>
+    <script src="__PUBLIC__/assets/js/charts/flot/jquery.flot.tooltip.js"></script>
+    <script src="__PUBLIC__/assets/js/charts/flot/jquery.flot.orderBars.js"></script>
+    <script>
+        var adopt = {$data['adopt']};
+        var fail = {$data['fail']};
+        var annals = {$data['annals']};
+        var data = [
+            { data: [[1, adopt]], color: '#11a9cc' },
+            { data: [[1, fail]], color: '#ffce55' },
+            { data: [[1, annals]], color: '#e75b8d' }
+        ];
+        var placeholder = $("#pie-chart-bandwidth");
+        placeholder.unbind();
+
+        $.plot(placeholder, data, {
+            series: {
+                pie: {
+                    innerRadius: 0.7,
+                    show: true,
+                    gradient: {
+                        radial: true,
+                        colors: [
+                            { opacity: 1.0 },
+                            { opacity: 1.0 },
+                            { opacity: 1.0 }
+                        ]
+                    }
+                }
+            }
+        });
+        function notify_info(){
+            $.post($('#notify-info').val(),{},function(data){
+                if(data.code == 0 && data.data){
+                    Notify(data.data, 'top-right', null, 'warning', 'fa-warning', true);
+                }
+            })
+        }
+        window.onload = function(){
+            // setTimeout(function(){
+            notify_info()
+            //},3000);
+        }
+    </script>
+</block>

@@ -1,0 +1,14 @@
+table tr td,th{
+    text-align: center;
+}
+.dataTables_filter{
+    float: right;
+}
+.operation{
+    position:absolute;
+    padding: 0px;
+    z-index: 999;
+}
+#student_info_length{
+    display: none;
+}

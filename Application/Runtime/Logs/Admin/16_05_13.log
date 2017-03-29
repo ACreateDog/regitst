@@ -1,0 +1,151 @@
+[ 2016-05-13T09:58:16+08:00 ] ::1 /register_system/index.php/Admin/Enter/lotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001337s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002184s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0035s ]
+SQL: UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('1','2','3') [ RunTime:0.0875s ]
+
+[ 2016-05-13T09:58:22+08:00 ] ::1 /register_system/index.php/Admin/Enter/cilil_issued_lot.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000715s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001221s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0041s ]
+SQL: UPDATE `register` SET `lot_release`='1' WHERE `civil_junior` = 12 AND `civil_status` = 1 [ RunTime:0.0005s ]
+SQL: UPDATE `register` SET `lot_release`='1',`civil_release`='1' WHERE `civil_junior` = 12 AND `civil_status` = 3 [ RunTime:0.0003s ]
+
+[ 2016-05-13T09:59:08+08:00 ] ::1 /register_system/index.php/Admin/Enter/civil_admis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000668s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001143s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0040s ]
+SQL: UPDATE `register` SET `civil_status`='2' WHERE `id` IN ('2') AND `civil_junior` = 12 [ RunTime:0.0624s ]
+
+[ 2016-05-13T09:59:13+08:00 ] ::1 /register_system/index.php/Admin/Enter/civil_issued_admis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001142s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0040s ]
+SQL: UPDATE `register` SET `civil_release`='1' WHERE `civil_junior` = 12 AND `civil_status` IN ('2','3') [ RunTime:0.0709s ]
+
+[ 2016-05-13T10:03:43+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_admis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001123s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0045s ]
+SQL: UPDATE `register` SET `pub_status`='1' WHERE `id` IN ('5','8','11','15') AND `pub_junior` = 9 [ RunTime:0.0513s ]
+
+[ 2016-05-13T10:03:49+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_Nadmis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001154s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0038s ]
+SQL: UPDATE `register` SET `pub_status`='2' WHERE `pub_junior` = 9 AND `id` IN ('7','9','14') [ RunTime:0.0730s ]
+
+[ 2016-05-13T10:06:44+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_issued_admis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000832s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001269s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0039s ]
+SQL: UPDATE `register` SET `pub_release`='1' WHERE `pub_junior` = 9 AND `pub_status` IN ('1','2') [ RunTime:0.0613s ]
+
+[ 2016-05-13T11:13:47+08:00 ] ::1 /register_system/index.php/Admin/Login/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000948s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001432s ]
+
+[ 2016-05-13T11:14:02+08:00 ] ::1 /register_system/index.php/Admin/Index/index.html
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-05-13T12:14:54+08:00 ] ::1 /register_system/index.php/Admin/Login/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000685s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001144s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0077s ]
+SQL: SELECT `id`,`pass`,`oid` FROM `user` WHERE `account` = '4567891' AND `status` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `organ` [ RunTime:0.0042s ]
+SQL: SELECT `name`,`rank`,`pid` FROM `organ` WHERE `id` = 1 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+INFO: Login => user_id :12name :新乡市
+NOTIC: [2] Missing argument 1 for Admin\Controller\LoginController::json_response(), called in D:\wamp\www\register_system\Application\Admin\Controller\LoginController.class.php on line 63 and defined D:\wamp\www\register_system\Application\Admin\Controller\LoginController.class.php 第 87 行.
+
+[ 2016-05-13T12:18:30+08:00 ] ::1 /register_system/index.php/Admin/Org/delete_org.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001106s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001950s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0344s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organ` [ RunTime:0.0056s ]
+SQL: SHOW COLUMNS FROM `organ` [ RunTime:0.0042s ]
+SQL: UPDATE `organ` SET `updatetime`='1463113110',`status`='1' WHERE `id` IN ('139') AND `status` = 0 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0044s ]
+SQL: UPDATE `user` SET `status`='1',`updatetime`='1463113110' WHERE `oid` IN ('139') AND `status` = 0 [ RunTime:0.0011s ]
+
+[ 2016-05-13T12:28:56+08:00 ] ::1 /register_system/index.php/Admin/Login/logout.html
+INFO: Logout => user_id :12name :新乡市
+
+[ 2016-05-13T12:29:08+08:00 ] ::1 /register_system/index.php/Admin/Login/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001236s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0042s ]
+SQL: SELECT `id`,`pass`,`oid` FROM `user` WHERE `account` = 'chuzhong24' AND `status` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `organ` [ RunTime:0.0042s ]
+SQL: SELECT `name`,`rank`,`pid` FROM `organ` WHERE `id` = 62 AND `status` = 0 LIMIT 1   [ RunTime:0.0005s ]
+INFO: Login => user_id :54name :十三中
+NOTIC: [2] Missing argument 1 for Admin\Controller\LoginController::json_response(), called in D:\wamp\www\register_system\Application\Admin\Controller\LoginController.class.php on line 63 and defined D:\wamp\www\register_system\Application\Admin\Controller\LoginController.class.php 第 87 行.
+
+[ 2016-05-13T12:36:14+08:00 ] ::1 /register_system/index.php/Admin/Login/logout.html
+INFO: Logout => user_id :54name :十三中
+
+[ 2016-05-13T12:36:23+08:00 ] ::1 /register_system/index.php/Admin/Login/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000754s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001188s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0057s ]
+SQL: SELECT `id`,`pass`,`oid` FROM `user` WHERE `account` = 'chuzhong12' AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organ` [ RunTime:0.0054s ]
+SQL: SELECT `name`,`rank`,`pid` FROM `organ` WHERE `id` = 50 AND `status` = 0 LIMIT 1   [ RunTime:0.0004s ]
+INFO: Login => user_id :42name :一中
+NOTIC: [2] Missing argument 1 for Admin\Controller\LoginController::json_response(), called in D:\wamp\www\register_system\Application\Admin\Controller\LoginController.class.php on line 63 and defined D:\wamp\www\register_system\Application\Admin\Controller\LoginController.class.php 第 87 行.
+
+[ 2016-05-13T12:41:25+08:00 ] ::1 /register_system/index.php/Admin/Login/logout.html
+INFO: Logout => user_id :42name :一中
+
+[ 2016-05-13T13:13:44+08:00 ] ::1 /register_system/index.php/Admin/Login/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000730s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001237s ]
+
+[ 2016-05-13T13:13:56+08:00 ] ::1 /register_system/index.php/Admin/Login/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000774s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001264s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0050s ]
+SQL: SELECT `id`,`pass`,`oid` FROM `user` WHERE `account` = 'chuzhong12' AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organ` [ RunTime:0.0037s ]
+SQL: SELECT `name`,`rank`,`pid` FROM `organ` WHERE `id` = 50 AND `status` = 0 LIMIT 1   [ RunTime:0.0004s ]
+INFO: Login => user_id :42name :一中
+NOTIC: [2] Missing argument 1 for Admin\Controller\LoginController::json_response(), called in D:\wamp\www\register_system\Application\Admin\Controller\LoginController.class.php on line 63 and defined D:\wamp\www\register_system\Application\Admin\Controller\LoginController.class.php 第 87 行.
+
+[ 2016-05-13T13:16:43+08:00 ] ::1 /register_system/index.php/Admin/Org/get_organ_info.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000716s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001176s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0385s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organ` [ RunTime:0.0040s ]
+SQL: SELECT a.name,b.name as parent,a.rank,a.address,a.handler,a.phone,a.introduction FROM organ a left join organ as b on a.pid = b.id  WHERE a.status = 0 AND a.id = 6 LIMIT 1   [ RunTime:0.0003s ]
+

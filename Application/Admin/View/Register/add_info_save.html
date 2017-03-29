@@ -1,0 +1,340 @@
+<extend name="Base:base" />
+<block name="css_link">
+    <link href="__PUBLIC__/staick/FileUpload/css/jquery.fileupload.css" rel="stylesheet">
+    <link href="__PUBLIC__/staick/FileUpload/css/jquery.fileupload-ui.css" rel="stylesheet">
+    <link href="__PUBLIC__/admin/student/css/add_info_save.css" rel="stylesheet"/>
+</block>
+<block name="main">
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <div class="widget">
+                <div class="widget-header ">
+                    <span class="widget-caption">{$reminder}</span>
+                    <!--<div class="widget-buttons">-->
+                        <!--<a href="#" data-toggle="maximize">-->
+                            <!--<i class="fa fa-expand"></i>-->
+                        <!--</a>-->
+                        <!--<a href="#" data-toggle="collapse">-->
+                            <!--<i class="fa fa-minus"></i>-->
+                        <!--</a>-->
+                    <!--</div>-->
+                </div>
+                <div class="widget-body">
+                    <form>
+                        <div class="col-lg-12 col-sm-12 col-xs-12">
+                            <div class="widget radius-bordered">
+                                <div class="widget-header bg-blue">
+                                    <span class="widget-caption">学生基本信息</span>
+                                </div><!--Widget Header-->
+                                <div class="widget-body basis_info">
+                                    <div class="fileupload-buttonbar tooltip-info" data-toggle="tooltip" data-placement="right" data-original-title="上传学生照片 180*180">
+                                        <div class="upload_img thumbnail col-sm-12">
+                                            <img id="photo_show" style="width:180px;height:180px;margin-top:10px;margin-bottom:8px;"  src="/register_system/Uploads/{$default}{$student_info['basis_info']['picture']}" data-holder-rendered="true">
+                                            <div class="progress progress-striped active" role="progressbar" aria-valuemin="10" aria-valuemax="100" aria-valuenow="0">
+                                                <div id="photo_progress" class="progress-bar progress-bar-success" style="width:0%;"></div>
+                                            </div>
+                                            <div class="caption" align="center">
+                                                <span id="photo_upload" class="btn btn-primary fileinput-button">
+                                                    <span>上传照片</span>
+                                                    <input type="file" id="photo_image" url="{:U('Register/uploadImg')}" name="photo_image" multiple>
+                                                </span>
+                                                <a id="photo_cancle" href="javascript:void(0)" class="btn btn-warning" role="button" style="display:none">重新上传</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form_text form-group">
+                                        <label for="name" class="col-sm-1 control-label no-padding-right"><span class='must'>*</span> 学生姓名：</label>
+                                        <input type="text" maxlength="20" class="form-control" value="{$student_info['basis_info']['name']}" name="name" id="name">
+                                    </div>
+                                    <div class="form_text form-group">
+                                        <label for="nation" class="col-sm-1 control-label no-padding-right"><span class='must'>*</span> 民族：</label>
+                                        <input type="text" maxlength="16" class="form-control" value="{$student_info['basis_info']['nation']}" name="nation" id="nation">
+                                    </div>
+                                    <div class="form_text form-group">
+                                        <label for="birthday" class="col-sm-1 control-label no-padding-right"><span class='must'>*</span> 生日：</label>
+                                        <div class="input-group">
+                                            <empty name="student_info['basis_info']['birthday']">
+                                                <input class="form-control date-picker" name="birthday" id="birthday" type="text" data-date-format="yyyy-mm-dd">
+                                            <else />
+                                                <input class="form-control date-picker" name="birthday" value="{$student_info['basis_info']['birthday']|date='Y-m-d',###}" id="birthday" type="text" data-date-format="yyyy-mm-dd">
+                                            </empty>
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-calendar"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form_text form-group">
+                                        <label for="sex" id="sex" data="{$student_info['basis_info']['sex']}" class="col-sm-1 control-label no-padding-right"><span class='must'>*</span> 性别：</label>
+                                        <div class="radio">
+                                            <label>
+                                                <input name="sex" value="0" class="colored-blue" type="radio">
+                                                <span class="text"> 男</span>
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input name="sex" value="1" class="colored-blue" type="radio">
+                                                <span class="text"> 女</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form_text form-group">
+                                        <label for="id_num" class="col-sm-1 control-label no-padding-right"><span class='must'>*</span> 学生身份证号：</label>
+                                        <input type="text" maxlength="18" class="form-control" value="{$student_info['basis_info']['id_num']}" name="id_num" id="id_num">
+                                    </div>
+                                    <if condition="session('rank') neq 6">
+                                        <div class="form_text form-group">
+                                            <label for="original_school" class="col-sm-1 control-label no-padding-right"><span class='must'>*</span> 原就读小学：</label>
+                                            <input type="text" maxlength="20" class="form-control" value="{$student_info['basis_info']['original_school']}" name="original_school" id="original_school">
+                                        </div>
+                                    </if>
+                                    <div class="form_text form-group">
+                                        <label for="sid_num" class="col-sm-1 control-label no-padding-right"><span class='must'>*</span> 学生学籍号：</label>
+                                        <input type="text" maxlength="20" class="form-control" value="{$student_info['basis_info']['sid_num']}" name="sid_num" id="sid_num">
+                                    </div>
+                                    <div class="form_text form-group">
+                                        <label for="account" class="col-sm-1 control-label no-padding-right"><span class='must'>*</span> 户口所在地：</label>
+                                        <input type="text" maxlength="50" class="form-control" value="{$student_info['basis_info']['account']}" name="account" id="account">
+                                    </div>
+                                    <div class="form_text form-group">
+                                        <label for="address" class="col-sm-1 control-label no-padding-right"><span class='must'>*</span> 家庭住址：</label>
+                                        <input type="text" maxlength="40" class="form-control" value="{$student_info['basis_info']['address']}" name="address" id="address">
+                                    </div>
+                                    <div class="form_text form-group">
+                                        <label for="phone" class="col-sm-1 control-label no-padding-right"><span class='must'>*</span> 电话：</label>
+                                        <input type="tel" class="form-control" value="{$student_info['basis_info']['phone']}" name="phone" id="phone">
+                                    </div>
+                                    <div class="form_text form-group">
+                                        <label for="email" class="col-sm-1 control-label no-padding-right">邮箱：</label>
+                                        <input type="email" class="form-control" value="{$student_info['basis_info']['email']}" name="email" id="email">
+                                    </div>
+                                </div>
+                            </div><!--Widget Body-->
+                        </div><!--Widget-->
+                        <div class="col-lg-12 col-sm-12 col-xs-12">
+                            <div class="widget radius-bordered">
+                                <div class="widget-header bg-blue">
+                                    <span class="widget-caption">填报学校</span>
+                                </div><!--Widget Header-->
+                                <div class="widget-body volunteer">
+                                    <div class="form_text form-group">
+                                        <label for="pub_junior" class="col-sm-1 control-label no-padding-right"><span class='must'>*</span> 公办初中填报：</label>
+                                        <select id="pub_junior" name="pub_junior" data={$student_info['volunteer']['pub_junior']} class="form-control">
+                                            <foreach name="secondary_school['pub_secondary_school']" item="vo">
+                                                <option value="{$vo['id']}">{$vo['name']}</option>
+                                            </foreach>
+                                        </select>
+                                    </div>
+                                    <div class="form_text form-group">
+                                        <label for="origin" id="origin" data="{$student_info['basis_info']['origin']}" class="col-sm-1 control-label no-padding-right"><span class='must'>*</span> 生源类型：</label>
+                                        <div class="radio">
+                                            <label>
+                                                <input name="origin" value="0" class="colored-blue" type="radio">
+                                                <span class="text"> 学区生</span>
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input name="origin" value="1" class="colored-blue" type="radio">
+                                                <span class="text"> 统筹生</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="assign form_text form-group">
+                                        <label for="origin" id="assign" class="col-sm-1 control-label no-padding-right"><span class='must'>*</span> 是否同意调配：</label>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input name="assign" checked class="colored-blue" type="checkbox">
+                                                <span class="text"> 同意调配【统筹生必须同意调配】</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form_text form-group">
+                                        <label for="civil_junior" class="col-sm-1 control-label no-padding-right">民办初中填报：</label>
+                                        <select id="civil_junior" name="civil_junior" data={$student_info['volunteer']['civil_junior']} class="form-control">
+                                            <option value=0>无</option>
+                                            <foreach name="secondary_school['civil_secondary_school']" item="vo">
+                                                <option value="{$vo['id']}">{$vo['name']}</option>
+                                            </foreach>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-sm-12 col-xs-12">
+                            <div class="widget radius-bordered">
+                                <div class="widget-header bg-blue">
+                                    <span class="widget-caption">房产信息</span>
+                                </div><!--Widget Header-->
+                                <div class="widget-body house_info">
+                                    <div class="form_text form-group">
+                                        <label for="house" class="col-sm-1 control-label no-padding-right"><!--<span class='must must_or'>*</span>--> 房产证编号：</label>
+                                        <input type="text" maxlength="50" class="form-control" value="{$student_info['basis_info']['house']}" name="house" id="house">
+                                    </div>
+                                    <div class="form_text form-group">
+                                        <label for="house_address" class="col-sm-1 control-label no-padding-right"><span class='must must_or'>*</span> 房产地址：</label>
+                                        <input type="text" maxlength="40" class="form-control" value="{$student_info['basis_info']['house_address']}" name="house_address" id="house_address">
+                                    </div>
+                                    <div class="form_text form-group">
+                                        <label for="house_owners" class="col-sm-1 control-label no-padding-right"><span class='must must_or'>*</span> 房产所有人及共有人：</label>
+                                        <input type="text" maxlength="50" class="form-control" value="{$student_info['basis_info']['house_owners']}" name="house_owners" id="house_owners">
+                                    </div>
+                                    <div class="form_text form-group">
+                                        <label for="house_relations" class="col-sm-1 control-label no-padding-right"><span class='must must_or'>*</span> 房产证户主与孩子关系：</label>
+                                        <input type="text" maxlength="40" class="form-control" value="{$student_info['basis_info']['house_relations']}" name="house_relations" id="house_relations">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-sm-12 col-xs-12">
+                            <div class="widget radius-bordered">
+                                <div class="widget-header bg-blue">
+                                    <span class="widget-caption">父母及监护人信息【至少填一栏】</span>
+                                    <div class="widget-buttons guardian_info_checkbox">
+                                        <div class="col-lg-2 col-sm-4 col-xs-4">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" class="colored-white" object="guardian_info">
+                                                    <span class="text">监护人信息</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-4 col-xs-4">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" class="colored-white" object="mother_info" checked="checked">
+                                                    <span class="text">母亲信息</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-4 col-xs-4">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" class="colored-white" object="father_info" checked="checked">
+                                                    <span class="text">父亲信息</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!--Widget Header-->
+                                <div class="widget-body duty_info">
+                                    <div class="col-lg-12 col-sm-12 col-xs-12 father_info">
+                                        <div class="widget radius-bordered">
+                                            <div class="widget-header">
+                                                <span class="widget-caption">父亲信息</span>
+                                            </div>
+                                            <div class="widget-body">
+                                                <div class="form_text form-group">
+                                                    <label for="guardian_name" class="col-sm-1 control-label no-padding-right"><span class='must'>*</span> 父亲姓名：</label>
+                                                    <input type="text" maxlength="20" class="form-control" value="{$student_info['duty_info']['father_info']['name']}" name="guardian_name" id="guardian_name">
+                                                </div>
+                                                <!--<div class="form_text form-group" style="display: none;">-->
+                                                <!--<label for="guardian_relation" class="col-sm-1 control-label no-padding-right">父亲关系：</label>-->
+                                                <!--<input type="text" maxlength="40" class="form-control" value="{$student_info['duty_info']['father_info']['relations']}" name="guardian_relation" id="guardian_relation">-->
+                                                <!--</div>-->
+                                                <div class="form_text form-group">
+                                                    <label for="guardian_ID" class="col-sm-1 control-label no-padding-right"><!--<span class='must'>*</span>--> 父亲身份证号码：</label>
+                                                    <input type="text" maxlength="18" class="form-control" value="{$student_info['duty_info']['father_info']['id_num']}" name="guardian_ID" id="guardian_ID">
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label for="guardian_unit" class="col-sm-1 control-label no-padding-right"><!--<span class='must'>*</span>--> 父亲单位：</label>
+                                                    <input type="text" maxlength="100" class="form-control" value="{$student_info['duty_info']['father_info']['workunit']}" name="guardian_unit" id="guardian_unit">
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label for="guardian_occupation" class="col-sm-1 control-label no-padding-right"><!--<span class='must'>*</span>--> 父亲职业：</label>
+                                                    <input type="text" maxlength="25" class="form-control" value="{$student_info['duty_info']['father_info']['occupation']}" name="guardian_occupation" id="guardian_occupation">
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label for="guardian_tel" class="col-sm-1 control-label no-padding-right"><span class='must'>*</span> 父亲联系手机：</label>
+                                                    <input type="text" maxlength="11" class="form-control" value="{$student_info['duty_info']['father_info']['phone']}" name="guardian_tel" id="guardian_tel">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-sm-12 col-xs-12 mother_info">
+                                        <div class="widget radius-bordered">
+                                            <div class="widget-header">
+                                                <span class="widget-caption">母亲信息</span>
+                                            </div>
+                                            <div class="widget-body">
+                                                <div class="form_text form-group">
+                                                    <label for="guardian_name" class="col-sm-1 control-label no-padding-right"><span class='must'>*</span> 母亲姓名：</label>
+                                                    <input type="text" maxlength="20" class="form-control" value="{$student_info['duty_info']['mother_info']['name']}" name="guardian_name" id="guardian_name">
+                                                </div>
+                                                <!--<div class="form_text form-group" style="display: none;">-->
+                                                    <!--<label for="guardian_relation" class="col-sm-1 control-label no-padding-right">母亲关系：</label>-->
+                                                    <!--<input type="text" maxlength="40" class="form-control" value="{$student_info['duty_info']['mother_info']['relations']}" name="guardian_relation" id="guardian_relation">-->
+                                                <!--</div>-->
+                                                <div class="form_text form-group">
+                                                    <label for="guardian_ID" class="col-sm-1 control-label no-padding-right"><!--<span class='must'>*</span>--> 母亲身份证号码：</label>
+                                                    <input type="text" maxlength="18" class="form-control" value="{$student_info['duty_info']['mother_info']['id_num']}" name="guardian_ID" id="guardian_ID">
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label for="guardian_unit" class="col-sm-1 control-label no-padding-right"><!--<span class='must'>*</span>--> 母亲单位：</label>
+                                                    <input type="text" maxlength="100" class="form-control" value="{$student_info['duty_info']['mother_info']['workunit']}" name="guardian_unit" id="guardian_unit">
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label for="guardian_occupation" class="col-sm-1 control-label no-padding-right"><!--<span class='must'>*</span>--> 母亲职业：</label>
+                                                    <input type="text" maxlength="25" class="form-control" value="{$student_info['duty_info']['mother_info']['occupation']}" name="guardian_occupation" id="guardian_occupation">
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label for="guardian_tel" class="col-sm-1 control-label no-padding-right"><span class='must'>*</span> 母亲联系手机：</label>
+                                                    <input type="text" maxlength="11" class="form-control" value="{$student_info['duty_info']['mother_info']['phone']}" name="guardian_tel" id="guardian_tel">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-sm-12 col-xs-12 guardian_info">
+                                        <div class="widget radius-bordered">
+                                            <div class="widget-header">
+                                                <span class="widget-caption">监护人信息</span>
+                                            </div>
+                                            <div class="widget-body">
+                                                <div class="form_text form-group">
+                                                    <label for="guardian_name" class="col-sm-1 control-label no-padding-right"><span class='must'>*</span> 监护人姓名：</label>
+                                                    <input type="text" maxlength="20" class="form-control" value="{$student_info['duty_info']['guardian_info']['name']}" name="guardian_name" id="guardian_name">
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label for="guardian_relation" class="col-sm-1 control-label no-padding-right"><span class='must'>*</span> 监护人关系：</label>
+                                                    <input type="text" maxlength="10" class="form-control" value="{$student_info['duty_info']['guardian_info']['relations']}" name="guardian_relation" id="guardian_relation">
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label for="guardian_ID" class="col-sm-1 control-label no-padding-right"><!--<span class='must'>*</span>--> 监护人身份证号码：</label>
+                                                    <input type="text" maxlength="18" class="form-control" value="{$student_info['duty_info']['guardian_info']['id_num']}" name="guardian_ID" id="guardian_ID">
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label for="guardian_unit" class="col-sm-1 control-label no-padding-right"><!--<span class='must'>*</span>--> 监护人单位：</label>
+                                                    <input type="text" maxlength="100" class="form-control" value="{$student_info['duty_info']['guardian_info']['workunit']}" name="guardian_unit" id="guardian_unit">
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label for="guardian_occupation" class="col-sm-1 control-label no-padding-right"><!--<span class='must'>*</span>--> 监护人职业：	</label>
+                                                    <input type="text" maxlength="25" class="form-control" value="{$student_info['duty_info']['guardian_info']['occupation']}" name="guardian_occupation" id="guardian_occupation">
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label for="guardian_tel" class="col-sm-1 control-label no-padding-right"><span class='must'>*</span> 监护人联系手机：</label>
+                                                    <input type="text" maxlength="11" class="form-control" value="{$student_info['duty_info']['guardian_info']['phone']}" name="guardian_tel" id="guardian_tel">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <a href="javascript:void(0);" to-url="{:U('Register/student')}" url="{:U('Register/add_save')}" student="{$student}" class="add_apply btn btn-azure shiny">保存</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js_link">
+    <!--Bootstrap Time Picker-->
+    <script src="__PUBLIC__/assets/js/datetime/bootstrap-datepicker.js"></script>
+    <!--FileUpload--->
+    <script src="__PUBLIC__/staick/FileUpload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="__PUBLIC__/staick/FileUpload/js/jquery.iframe-transport.js"></script>
+    <script src="__PUBLIC__/staick/FileUpload/js/jquery.fileupload.js"></script>
+
+    <script src="__PUBLIC__/admin/student/js/add_info_save.js"></script>
+</block>

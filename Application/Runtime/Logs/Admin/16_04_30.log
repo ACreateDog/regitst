@@ -1,0 +1,4 @@
+[ 2016-04-30T10:21:56+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubindex.html
+ERR: 1146:Table 'register_system.seting' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `seting`
+

@@ -1,0 +1,113 @@
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="navbar-container">
+            <!-- Navbar Barnd -->
+            <div class="navbar-header pull-left">
+                <a href="#" class="navbar-brand">
+                    <small>
+                        <!--<img src="__PUBLIC__/assets/img/logo.png" alt=""/>-->
+                        <p style="line-height:41px;">新乡市小升初学生端</p>
+                    </small>
+                </a>
+            </div>
+            <!-- Account Area and Settings --->
+            <div class="navbar-header pull-right">
+                <div class="navbar-account">
+                    <ul class="account-area">
+                        <li>
+                            <a href="{:U('Register/register')}" class="login-area dropdown-toggle" title="报考学校和录取状态">
+                                <div class="avatar" title="状态">
+                                    <i class="icon fa fa-edit" style="line-height: 30px;"></i>
+                                </div>
+                                <section>
+                                    <h2>
+                                        <span class="profile">
+                                            <span>报考学校及录取状态</span>
+                                        </span>
+                                    </h2>
+                                </section>
+                            </a>
+                        </li>
+                        <li class>
+                            <a class="login-area dropdown-toggle" data-toggle="dropdown" title="学生信息" href="{:U('Register/student_info')}">
+                                <div class="avatar" title="信息">
+                                    <i class="icon fa fa-comments-o" style="line-height: 30px;"></i>
+                                </div>
+                                <section>
+                                    <h2>
+                                        <span class="profile">
+                                            <span>基本信息</span>
+                                        </span>
+                                    </h2>
+                                </section>
+                            </a>
+                            <ul class="zxc pull-right dropdown-menu dropdown-arrow dropdown-messages nav sidebar-menu" style="width: 139.5px;">
+                                <li>
+                                    <a href="{:U('Register/student_info')}">
+                                        <div class="clearfix">
+                                            <span class="pull-left pull-left-env">
+                                                <i class="fa fa-smile-o"></i>
+                                            </span>
+                                            <span class="pull-right pull-right-env">学生信息</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{:U('Register/parent_info')}">
+                                        <div class="clearfix">
+                                            <span class="pull-left pull-left-env">
+                                                <i class="fa fa-heart-o"></i>
+                                            </span>
+                                            <span class="pull-right pull-right-env" id="pull-right-float">父母信息</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!--<span><i class="fa fa-angle-right"></i></span>-->
+                        </li>
+                        <li style="right: -40px;">
+                            <a class="login-area dropdown-toggle" data-toggle="dropdown">
+                                <div class="avatar" style="border-left:0px;" title="点击修改密码或退出系统">
+                                    <img src="__ROOT__/Uploads/{$userPicture}">
+                                </div>
+                                <section style="width: 105px;">
+                                    <h2><span class="profile"><span>{$name}</span></span></h2>
+                                </section>
+                            </a>
+                            <!--Login Area Dropdown-->
+                            <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                <li class="username"><a></a></li>
+                                <li class="email"><a>欢迎来到小升初学生端</a></li>
+                                <li>
+                                    <div class="avatar-area">
+                                        <img src="__ROOT__/Uploads/{$userPicture}" class="avatar">
+                                        <span class="caption">{$name}</span>
+                                    </div>
+                                </li>
+                                <li class="dropdown-footer edit">
+                                    <a href="#" class="pull-left" id="bootbox-options">修改密码</a>
+                                    <!--<a href="{:U('login/logout',null,false)}" class="pull-right" id="exit-system">退出系统</a>-->
+                                    <a href="#" class="pull-right" id="exit-system">退出系统</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<block name="script">
+    <script>
+        $(function () {
+            $('#exitSystem').on('click', function () {
+                alert("确定退出么？");
+                $.post("{:U('login/logout',null,false)}", function (s, d) {
+
+                });
+            });
+        });
+    </script>
+</block>
+

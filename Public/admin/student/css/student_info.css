@@ -1,0 +1,29 @@
+table tr td,th{
+    text-align: center;
+}
+.dataTables_filter{
+    float: right;
+}
+.operation{
+    position:absolute;
+    padding: 0px;
+    z-index: 999;
+}
+#student_info_length{
+    display: none;
+}
+.pub_junior_title{
+    line-height: 34px;
+    text-align: right;
+    width: 25%;
+}
+#pub_junior{
+    width: 70%;
+    display: inline-block;
+}
+.present_warning{
+    color: #EE8809;
+}
+.again_write_btn{
+    cursor: pointer;
+}

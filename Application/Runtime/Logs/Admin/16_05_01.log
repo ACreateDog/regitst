@@ -1,0 +1,21 @@
+[ 2016-05-01T09:08:26+08:00 ] ::1 /register_system/index.php/Admin/Enter/
+ERR: 非法操作:index
+
+[ 2016-05-01T09:08:32+08:00 ] ::1 /register_system/index.php/Admin/Enter/index
+ERR: 非法操作:index
+
+[ 2016-05-01T09:08:47+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_index
+ERR: 非法操作:pub_index
+
+[ 2016-05-01T10:09:23+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubadopt.html
+ERR: 1146:Table 'register_system.studnet,' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `studnet,`
+
+[ 2016-05-01T10:11:33+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubadopt.html
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SELECT * FROM `` INNER JOIN student on student.id = register.sid INNER JOIN organ on student.id = register.sid  WHERE register.pub_release = 1 AND register.pub_status = 1 AND `pub_junior` = null 
+
+[ 2016-05-01T10:25:52+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubadopt.html
+ERR: 1052:Column 'phone' in field list is ambiguous
+ [ SQL语句 ] : SELECT student.name as stu_name,`sex`,`sid_num`,organ.name as sch_name,`account`,`phone` FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  WHERE register.pub_release = 1 AND register.pub_status = 1 AND `pub_junior` = 2 
+

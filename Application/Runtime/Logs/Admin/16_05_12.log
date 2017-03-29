@@ -1,0 +1,10 @@
+[ 2016-05-12T20:25:33+08:00 ] ::1 /register_system/index.php/Admin/Enter/cilil_issued_lot.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000694s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001166s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0039s ]
+SQL: UPDATE `register` SET `lot_release`='1' WHERE `civil_junior` = 9 AND `civil_status` = 1 [ RunTime:0.0353s ]
+SQL: UPDATE `register` SET `lot_release`='1',`civil_release`='1' WHERE `civil_junior` = 9 AND `civil_status` = 3 [ RunTime:0.0003s ]
+

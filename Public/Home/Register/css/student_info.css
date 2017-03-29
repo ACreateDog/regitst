@@ -1,0 +1,14 @@
+/*头像显示位置设置*/
+@media screen and (max-width: 600px) {
+    .mail-container .mail-sidebar {
+        display: block;
+        min-height: 1%;
+        left: 80%;
+        width: 18%!important;
+    }
+}
+
+.table-hover tbody tr td:first-child {
+    width: 200px;
+    min-width: 100px;
+}

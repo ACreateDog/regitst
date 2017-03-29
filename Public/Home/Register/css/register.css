@@ -1,0 +1,61 @@
+
+@media (max-width: 330px) {
+    .mail-container .mail-body .mail-list .list-item {
+        height: 38px;
+    }
+}
+
+@media (max-width: 330px) {
+    .mail-container .mail-body .mail-list .list-item>div.item-subject {
+        line-height: 0px;
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 330px) {
+    .mail-container .mail-body .mail-list .list-item>div.item-sender {
+        left: 2%;
+    }
+}
+
+@media (max-width: 999px) {
+    .mail-container .mail-body .mail-list .list-item>div.item-subject {
+        top: 19px;
+        left: 70px;
+    }
+}
+
+
+@media (max-width: 990px) {
+    .mail-container .mail-body .mail-list .list-item {
+        height: 38px;
+    }
+}
+
+@media (max-width: 990px) {
+    .mail-container .mail-body .mail-list .list-item>div.item-subject {
+        line-height: 0px;
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 990px) {
+    .mail-container .mail-body .mail-list .list-item>div.item-sender {
+        left: 2%;
+    }
+}
+
+.table-hover tbody tr td:first-child {
+    width: 200px;
+    min-width: 100px;
+}
+
+.prompt-text {
+    width: 50%;
+    height: 32px;
+    float: right;
+    padding: 5px;
+    color: red;
+}
+
+

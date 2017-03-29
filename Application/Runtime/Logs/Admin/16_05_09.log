@@ -1,0 +1,36 @@
+[ 2016-05-09T15:21:39+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_admis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000733s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001221s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0039s ]
+SQL: UPDATE `register` SET `pub_status`='1' WHERE `id` IN ('3','9','15') AND `pub_junior` = 9 [ RunTime:0.0696s ]
+
+[ 2016-05-09T15:21:43+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_issued_admis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000738s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001304s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0045s ]
+SQL: UPDATE `register` SET `pub_release`='1' WHERE `pub_junior` = 9 AND `pub_status` IN ('1','2') [ RunTime:0.0832s ]
+
+[ 2016-05-09T15:21:57+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_Nadmis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000728s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001323s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0040s ]
+SQL: UPDATE `register` SET `pub_status`='2' WHERE `pub_junior` = 9 AND `id` IN ('1','5','7','8','11','12') [ RunTime:0.1093s ]
+
+[ 2016-05-09T15:22:00+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_issued_admis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000705s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001151s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0044s ]
+SQL: UPDATE `register` SET `pub_release`='1' WHERE `pub_junior` = 9 AND `pub_status` IN ('1','2') [ RunTime:0.0636s ]
+

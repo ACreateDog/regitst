@@ -1,0 +1,124 @@
+<extend name="Base:base"/>
+<block name="css_link">
+    <style>
+        .widget-body{
+            padding:15px;
+        }
+        .col-sm-10{
+            padding-left:0px;
+        }
+        .col-sm-2{
+            max-width:100px;
+        }
+        .form-control{
+            width: 50%;;
+        }
+        textarea.form-control{
+            resize: none;
+            height: 120px;
+
+        }
+        .help-block{
+            clear: both;
+            margin-left: 10px;
+            margin-top: 3px;
+            margin-bottom: 0px;
+            color: #aaa;
+        }
+    </style>
+</block>
+<block name="main">
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <div class="widget">
+                <div class="widget-header bordered-bottom bordered-blue">
+                    <span class="widget-caption">完善信息</span>
+                </div>
+                <div class="widget-body">
+                    <div>
+                        <form  class="form-horizontal" action="{:U('Org/update_organ_info')}">
+                            <div class="form-group">
+                                <label for="name" class="col-sm-2 control-label">机构名称</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="name" value="{$info.name}" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="parent-org" class="col-sm-2 control-label">所属上级</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="parent-org" value="{$info.parent}" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="address" class="col-sm-2 control-label">机构地址</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="address" id="address" maxlength="80" placeholder="机构地址" value="{$info.address}" data-value="{$info.address}">
+                                    <p class="help-block">字符数不超过80</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="handler" class="col-sm-2 control-label">联系人姓名</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="handler" id="handler" maxlength="10" placeholder="联系人姓名" value="{$info.handler}" data-value="{$info.handler}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="col-sm-2 control-label">联系人电话</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="phone" id="phone" placeholder="联系人电话" value="{$info.phone}" data-value="{$info.phone}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="introduction" class="col-sm-2 control-label">机构简介</label>
+                                <div class="col-sm-10">
+                                    <textarea type="text" maxlength='300' name="introduction" placeholder="机构简介"
+                                              class="form-control"  id="introduction"  data-value="{$info.introduction}">{$info.introduction}</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label" ></label>
+                                <div class="col-sm-10">
+                                    <button type="button" class="btn btn-blue" id="submit-btn">提交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js_link">
+    <script>
+        $('#submit-btn').on('click',function(){
+            var form = $(this).parents('form');
+            var url = form.attr('action');
+            var pdata = {};
+            var flag = false;
+            form.find('input,textarea').each(function(){
+                if(!this.disabled) {
+                    if ($(this).attr('data-value') != $(this).val()) {
+                        pdata[$(this).attr('name')] = $(this).val();
+                        flag = true;
+                    }
+                }
+            })
+            if(flag){
+                $.post(url,pdata,function(data){
+                    if(data.code == 0){
+                        alert_info('success','成功', '修改成功');
+                        form.find('input,textarea').each(function(){
+                            if(!this.disabled) {
+                                $(this).attr('data-value', $(this).val());
+                            }
+                        })
+                    }else{
+                        alert_info('warning', '失败', data.msg);
+                    }
+                });
+            }else{
+                alert_info('info', '提示', '已保存');
+            }
+        })
+    </script>
+</block>

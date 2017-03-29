@@ -1,0 +1,155 @@
+<extend name="Base:base"/>
+<block name="css_link">
+    <link href="__STATIC__/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <style>
+        .pricing-container .plan ul{
+            max-width: 150px;
+            margin: 20px auto 10px auto;
+        }
+        .option-lab{
+
+        }
+        .option-data{
+            font-weight:bold;
+            font-size:18px;
+        }
+        .clear-float{
+            clear: both;
+        }
+        .btn-bar{
+            padding: 15px;
+        }
+        .pricing-container .plan .signup{
+            margin : 0;
+        }
+    </style>
+</block>
+<block name="main">
+    <div class="'row">
+        <h5 class="row-title before-themeprimary">时间节点设置</h5>
+        <div class="row pricing-container">
+            <div class="col-xs-12 col-sm-6 col-md-4 plan-bar">
+                <div class="plan">
+                    <div class="header bordered-yellow">信息报名</div>
+                    <ul>
+                        <li  class="option-lab">截止时间</li>
+                        <li  class="option-data" data-date="{$info_time}" data-for="info-time">
+                            <empty name="info_time">未设置<else/>{$info_time}</empty>
+                        </li>
+                        <div class="clear-float"></div>
+                    </ul>
+                    <div class="btn-bar">
+                        <a class="signup bg-warning" href="#">修改</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 plan-bar">
+                <div class="plan">
+                    <div class="header bordered-palegreen">民办录取</div>
+                    <ul>
+                        <li  class="option-lab">截止时间</li>
+                        <li  class="option-data" data-date="{$civil_time}" data-for="civil-time">
+                            <empty name="civil_time">未设置<else/>{$civil_time}</empty>
+                        </li>
+                        <div class="clear-float"></div>
+                    </ul>
+                    <div class="btn-bar">
+                        <a class="signup bg-warning" href="#">修改</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 plan-bar">
+                <div class="plan">
+                    <div class="header bordered-orange">公办录取</div>
+                    <ul>
+                        <li  class="option-lab">截止时间</li>
+                        <li  class="option-data" data-date="{$pub_time}" data-for="pub-time">
+                            <empty name="pub_time">未设置<else/>{$pub_time}</empty>
+                        </li>
+                        <div class="clear-float"></div>
+                    </ul>
+                    <div class="btn-bar">
+                        <a class="signup bg-warning" href="#">修改</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--hidden input start-->
+    <input type="hidden" id="info-time-url" value="{:U('Setting/update_time?type=info')}"/>
+    <input type="hidden" id="pub-time-url" value="{:U('Setting/update_time?type=pub')}"/>
+    <input type="hidden" id="civil-time-url" value="{:U('Setting/update_time?type=civil')}"/>
+    <!--hidden input end-->
+</block>
+<block name="js_link">
+    <script src="__STATIC__/bootstrap-datetimepicker.min.js"></script>
+    <script>
+        var data_picker = '<div class="input-group">'+
+                '<input class="form-control date-picker" type="text" data-date-format="yyyy-mm-dd" readonly>'+
+                        '</div>';
+        var edit_btn = '<a class="signup bg-warning" href="#">修改</a>';
+        var send_btn = '<a class="btn btn-blue sure" >确定</a> <a class="btn btn-default cancel" >取消</a>';
+        $('.btn-bar').on('click', 'a.signup',function(e){
+            e.preventDefault();
+            var bar = $(this).parent();
+            var startDate = bar.parents('.plan-bar').prev().find('.option-data').data('date');
+            if(!startDate){
+                startDate = new Date()
+            }
+
+            bar.parent().find('.option-data').each(function(){
+                var picker = $(data_picker);
+                $(this).html(picker);
+
+                picker.find('.date-picker').val($(this).data('date')).datetimepicker({
+                    autoclose:true,
+                    minView:'month',
+                    maxView:'year',
+                    pickerPosition: "bottom-right",
+                    startDate:startDate
+                }).datetimepicker('show');
+            });
+            bar.html(send_btn);
+        });
+        $('.btn-bar').on('click', 'a.sure', function(e){
+            var bar = $(this).parent();
+            bar.parent().find('.option-data').each(function(){
+                var new_date = $(this).find('input').val();
+
+                if(new_date == $(this).data('date')){
+                    return func();
+                }
+                var that = this;
+                function  func(){
+                    $(that).text(new_date);
+                    $(that).data('date',new_date);
+                    bar.html(edit_btn);
+                }
+
+                change_date($(this).data('for'),new_date,func);
+
+            });
+
+        })
+        $('.btn-bar').on('click', 'a.cancel', function(e){
+            var bar = $(this).parent();
+            bar.parent().find('.option-data').each(function(){
+                var dd = $(this).data('date');
+                $(this).text(dd ? dd : '未设置');
+            });
+            bar.html(edit_btn);
+        })
+        function change_date(type,data,fun){
+//            return fun();
+            var url = $("#"+type+'-url').val();
+            $.post(url,{time:data},function(data){
+                if(data.code == 0){
+                    alert_info('success','成功','设置成功');
+                    fun();
+                }else{
+                    alert_info('warning','失败',data.msg);
+                }
+            })
+        }
+    </script>
+</block>

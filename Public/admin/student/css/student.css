@@ -1,0 +1,57 @@
+.form_text{
+    display: inline-block;
+    width: 75%;
+    margin-bottom: 5px;
+}
+.col-lg-12 {
+    width: 94%;
+    margin-left: 3%;
+}
+.col-sm-1{
+    line-height: 34px;
+    width: 25%;
+    text-align: right;
+}
+.basis_info{
+    display: inline-block;
+}
+.duty_info{
+    display: inline-block;
+    width: 100%;
+}
+.fileupload-buttonbar{
+    width: 20%;
+    display: inline-block;
+    position: absolute;
+    left: 72%;
+    z-index: 99;
+    cursor: pointer;
+}
+.widget-body span{
+    line-height: 34px;
+}
+.widget-body{
+    display: inline-block;
+}
+.house_info,.enroll_info{
+    display: block;
+}
+.edit{
+    margin-left: 70%;
+    margin-top: 1%;
+}
+.submit{
+    margin-left: 3%;
+    margin-top: 1%;
+}
+.reset_pass{
+    display: inline-block;
+    margin-left: 35%;
+}
+.duty_info_header{
+    width: 20%;
+    text-align: center;
+}
+.edit_duty_info,.save_duty_info,.duty_info_cancel{
+    width: 37%;
+}

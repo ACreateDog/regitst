@@ -1,0 +1,364 @@
+<extend name="Base:base"/>
+<block name="css_link">
+    <link href="__PUBLIC__/assets/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <style>
+        .table-toolbar{
+            position:absolute;
+            padding:0;
+            z-index: 99;
+        }
+        .user-list{
+            table-layout:fixed ;
+        }
+        .table>tbody>tr>td.details{
+            padding: 0;
+        }
+        a.add{
+            display: none;
+        }
+        .dataTable .details td, .dataTable .details th{
+            padding: 8px;
+            border-left:1px solid #ddd;
+        }
+        @media (min-width: 768px){
+            .modal-dialog {
+                width: 400px;
+                margin: 30px auto;
+            }
+        }
+        @media (max-width: 768px){
+            .modal-dialog {
+                width: 80%;
+                margin: 30px auto;
+            }
+        }
+        .dd2-handle{
+            width: 70px;
+        }
+        .dd2-handle+.dd2-content{
+            padding-left: 80px;
+        }
+
+    </style>
+</block>
+<block name="main">
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <div class="widget">
+                <div class="widget-header ">
+                    <span class="widget-caption">市教育局</span>
+                    <div class="widget-buttons">
+                        <a href="#" data-toggle="maximize">
+                            <i class="fa fa-expand"></i>
+                        </a>
+                        <a href="#" data-toggle="collapse">
+                            <i class="fa fa-minus"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="widget-body">
+                    <table class="table table-striped table-hover table-bordered" id="city-table">
+                        <thead>
+                        <tr>
+                            <th>
+                                名称
+                            </th>
+                            <th>
+                                联系人
+                            </th>
+                            <th>
+                                联系电话
+                            </th>
+                            <th>
+                                地址
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-id="{$city.id}">
+                                <td>
+                                    <a href="#" class="detail">{$city.name}</a>
+                                </td>
+                                <td>
+                                    {$city.handler}
+                                </td>
+                                <td>
+                                    {$city.phone}
+                                </td>
+                                <td>
+                                    {$city.address}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <div class="widget">
+                <div class="widget-header ">
+                    <span class="widget-caption">区教育局</span>
+                    <div class="widget-buttons">
+                        <a href="#" data-toggle="maximize">
+                            <i class="fa fa-expand"></i>
+                        </a>
+                        <a href="#" data-toggle="collapse">
+                            <i class="fa fa-minus"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="widget-body">
+                    <table class="table table-striped table-hover table-bordered" id="editabledatatable">
+                        <thead>
+                        <tr>
+                            <th>
+                                名称
+                            </th>
+                            <th>
+                                联系人
+                            </th>
+                            <th>
+                                联系电话
+                            </th>
+                            <th>
+                                地址
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <volist name="area_list" id="vo">
+                                <tr data-id="{$vo.id}">
+                                    <td>
+                                        <a href="#" class="detail">{$vo.name}</a>
+                                    </td>
+                                    <td>
+                                        {$vo.handler}
+                                    </td>
+                                    <td>
+                                        {$vo.phone}
+                                    </td>
+                                    <td>
+                                        {$vo.address}
+                                    </td>
+                                </tr>
+                            </volist>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <div class="widget">
+                <div class="widget-header ">
+                    <span class="widget-caption">小学</span>
+                    <div class="widget-buttons">
+                        <a href="#" data-toggle="maximize">
+                            <i class="fa fa-expand"></i>
+                        </a>
+                        <a href="#" data-toggle="collapse">
+                            <i class="fa fa-minus"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="widget-body">
+                    <table class="table table-striped table-hover table-bordered simple-table" id="primary-table">
+                        <thead>
+                        <tr>
+                            <th>
+                                名称
+                            </th>
+                            <th>
+                                区属/市属
+                            </th>
+                            <th>
+                                联系人
+                            </th>
+                            <th>
+                                联系电话
+                            </th>
+                            <th>
+                                地址
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <volist name="primary_list" id="vo">
+                                <tr data-id="{$vo.id}">
+                                    <td>
+                                        <a href="#" class="detail">{$vo.name}</a>
+                                    </td>
+                                    <td>
+                                        {$vo.area}
+                                    </td>
+                                    <td>
+                                        {$vo.handler}
+                                    </td>
+                                    <td>
+                                        {$vo.phone}
+                                    </td>
+                                    <td>
+                                        {$vo.address}
+                                    </td>
+                                </tr>
+                            </volist>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <div class="widget">
+                <div class="widget-header ">
+                    <span class="widget-caption">初中</span>
+                    <div class="widget-buttons">
+                        <a href="#" data-toggle="maximize">
+                            <i class="fa fa-expand"></i>
+                        </a>
+                        <a href="#" data-toggle="collapse">
+                            <i class="fa fa-minus"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="widget-body">
+                    <table class="table table-striped table-hover table-bordered simple-table" id="junior-table">
+                        <thead>
+                        <tr>
+                            <th>
+                                名称
+                            </th>
+                            <th>
+                                区属/市属
+                            </th>
+                            <th>
+                                民办/公办
+                            </th>
+                            <th>
+                                联系人
+                            </th>
+                            <th>
+                                联系电话
+                            </th>
+                            <th>
+                                地址
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <volist name="junior_list" id="vo">
+                                <tr data-id="{$vo.id}">
+                                    <td>
+                                        <a href="#" class="detail">{$vo.name}</a>
+                                    </td>
+                                    <td>
+                                        {$vo.area}
+                                    </td>
+                                    <td>
+                                        <if condition="$vo.rank eq 3 ">公办
+                                            <else /> 民办
+                                        </if>
+                                    </td>
+                                    <td>
+                                        {$vo.handler}
+                                    </td>
+                                    <td>
+                                        {$vo.phone}
+                                    </td>
+                                    <td>
+                                        {$vo.address}
+                                    </td>
+                                </tr>
+                            </volist>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js_link">
+    <script src="__PUBLIC__/assets/js/datatable/jquery.dataTables.min.js"></script>
+    <script src="__PUBLIC__/assets/js/datatable/ZeroClipboard.js"></script>
+    <script src="__PUBLIC__/assets/js/datatable/dataTables.tableTools.min.js"></script>
+    <script src="__PUBLIC__/assets/js/datatable/dataTables.bootstrap.min.js"></script>
+    <script src="__PUBLIC__/assets/js/datatable/datatables-init.js"></script>
+    <script src="__PUBLIC__/assets/js/bootbox/bootbox.js"></script>
+    <script>
+        var InitiateCityTable = function (){
+            return {
+                init : function(){
+
+                }
+            }
+        }();
+        var InitiateEditableDataTable = function () {
+            return {
+                init: function () {
+                    //Datatable Initiating
+                    var oTable = $('#editabledatatable').dataTable({
+                        "lengthChange": false,
+                        "paging": false,
+                        "sPaginationType": "bootstrap",
+                        "sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
+                        "oTableTools": {
+                            "aButtons": [
+                                // "create"
+                            ],
+                            "sSwfPath": "assets/swf/copy_csv_xls_pdf.swf"
+                        },
+                        "language": {
+                            "search": "",
+                            "sLengthMenu": "_MENU_",
+                            "oPaginate": {
+                                "sPrevious": "<",
+                                "sNext": ">"
+                            },
+                            "zeroRecords": "没有找到符合条件的记录"
+                        },
+                        "infoCallback": pageInfo
+                    });
+                }
+            };
+        }();
+        var InitiateSimpleTable = function () {
+            return {
+                init: function () {
+                    var aTable = $('.simple-table').dataTable({
+                        "lengthChange": false,
+                        "iDisplayLength": 10,
+                        "sPaginationType": "bootstrap",
+                        "sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
+                        "oTableTools": {
+                            "aButtons": [
+                                // "create"
+                            ],
+                            "sSwfPath": "assets/swf/copy_csv_xls_pdf.swf"
+                        },
+                        "language": {
+                            "search": "",
+                            "sLengthMenu": "_MENU_",
+                            "oPaginate": {
+                                "sPrevious": "<",
+                                "sNext": ">"
+                            },
+                            "zeroRecords": "没有找到符合条件的记录"
+                        },
+                        "infoCallback": function( settings, start, end, max, total, pre ) {
+                            return '第 ' + start +" 到 "+ end + ' 行   共' + total + '行';
+                        }
+                    });
+                }
+            };
+        }();
+
+        InitiateCityTable.init();
+        InitiateEditableDataTable.init();
+        InitiateSimpleTable.init();
+    </script>
+    <include file="Org:detail"/>
+</block>

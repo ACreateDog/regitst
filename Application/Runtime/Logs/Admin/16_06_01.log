@@ -1,0 +1,1178 @@
+[ 2016-06-01T10:56:01+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilreginfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000927s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000916s ]
+
+[ 2016-06-01T10:56:01+08:00 ] ::1 /register_system/index.php/Admin/Empty/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000750s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000864s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001144s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000125s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000277s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018523s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018746s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000557s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000751s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000936s ]
+
+[ 2016-06-01T10:56:09+08:00 ] ::1 /register_system/index.php/Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000477s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000718s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0719s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2016-06-01T10:56:09+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubindex.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000768s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000960s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001220s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0056s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE student.status = 1 AND `pub_release` = 0 AND ( (pub_junior=51 and civil_release=1 and civil_status=3) or (civil_junior=0 and pub_junior=51) or (pub_junior=51 and civil_release=1 and civil_status=4) )  [ RunTime:0.0011s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE ( (pub_junior = 51 and pub_status = 1 and pub_release = 1) or (assign_junior = 51 and register.status = 3) )  [ RunTime:0.0008s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE ( (pub_junior = 51 and pub_status = 2 and pub_release = 1) or (pub_junior = 51 and register.status = 1) )  [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for Admin\Model\EnterModel::get_pubreginfo(), called in D:\wamp\www\register_system\Application\Admin\Model\EnterModel.class.php on line 27 and defined D:\wamp\www\register_system\Application\Admin\Model\EnterModel.class.php 第 60 行.
+NOTIC: [8] Undefined variable: type D:\wamp\www\register_system\Application\Admin\Model\EnterModel.class.php 第 62 行.
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE ( (`pub_junior` = 51) or (assign_junior = 51 and register.status = 3) )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `organ` [ RunTime:0.0053s ]
+SQL: SELECT `name` FROM `organ` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `introduction` FROM `organ` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0052s ]
+SQL: SELECT `register_end_time` FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000224s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000372s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\f2a4b02095f2d7119c5f252549be3309.php 第 205 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022685s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022982s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000504s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000717s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000872s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001089s ]
+
+[ 2016-06-01T10:56:10+08:00 ] ::1 /register_system/index.php/Admin/Index/notify_fail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001015s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000970s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001203s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0360s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0044s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE student.status = 1 AND `pub_release` = 0 AND ( (pub_junior=51 and civil_release=1 and civil_status=3) or (civil_junior=0 and pub_junior=51) or (pub_junior=51 and civil_release=1 and civil_status=4) )  [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for Admin\Controller\BaseController::json_response(), called in D:\wamp\www\register_system\Application\Admin\Controller\IndexController.class.php on line 135 and defined D:\wamp\www\register_system\Application\Admin\Controller\BaseController.class.php 第 77 行.
+
+[ 2016-06-01T10:56:12+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubindex.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000784s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0222s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0055s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE student.status = 1 AND `pub_release` = 0 AND ( (pub_junior=51 and civil_release=1 and civil_status=3) or (civil_junior=0 and pub_junior=51) or (pub_junior=51 and civil_release=1 and civil_status=4) )  [ RunTime:0.0007s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE ( (pub_junior = 51 and pub_status = 1 and pub_release = 1) or (assign_junior = 51 and register.status = 3) )  [ RunTime:0.0005s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE ( (pub_junior = 51 and pub_status = 2 and pub_release = 1) or (pub_junior = 51 and register.status = 1) )  [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for Admin\Model\EnterModel::get_pubreginfo(), called in D:\wamp\www\register_system\Application\Admin\Model\EnterModel.class.php on line 27 and defined D:\wamp\www\register_system\Application\Admin\Model\EnterModel.class.php 第 60 行.
+NOTIC: [8] Undefined variable: type D:\wamp\www\register_system\Application\Admin\Model\EnterModel.class.php 第 62 行.
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE ( (`pub_junior` = 51) or (assign_junior = 51 and register.status = 3) )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `organ` [ RunTime:0.0056s ]
+SQL: SELECT `name` FROM `organ` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `introduction` FROM `organ` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0088s ]
+SQL: SELECT `register_end_time` FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000438s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000729s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\f2a4b02095f2d7119c5f252549be3309.php 第 205 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019756s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019975s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000325s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000451s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000760s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000935s ]
+
+[ 2016-06-01T10:56:12+08:00 ] ::1 /register_system/index.php/Admin/Index/notify_fail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000946s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001298s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001619s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0215s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0078s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE student.status = 1 AND `pub_release` = 0 AND ( (pub_junior=51 and civil_release=1 and civil_status=3) or (civil_junior=0 and pub_junior=51) or (pub_junior=51 and civil_release=1 and civil_status=4) )  [ RunTime:0.0007s ]
+NOTIC: [2] Missing argument 1 for Admin\Controller\BaseController::json_response(), called in D:\wamp\www\register_system\Application\Admin\Controller\IndexController.class.php on line 135 and defined D:\wamp\www\register_system\Application\Admin\Controller\BaseController.class.php 第 77 行.
+
+[ 2016-06-01T10:56:18+08:00 ] ::1 /register_system/index.php/Admin/Login/logout.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001589s ]
+INFO: Logout => user_id :43name :一中东校区
+
+[ 2016-06-01T10:56:18+08:00 ] ::1 /register_system/index.php/Admin/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000871s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001128s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001418s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000292s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.050301s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050503s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000439s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000835s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001045s ]
+
+[ 2016-06-01T10:56:19+08:00 ] ::1 /register_system/index.php/Admin/Login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000718s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000930s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001186s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000996s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001270s ]
+
+[ 2016-06-01T10:57:18+08:00 ] ::1 /register_system/index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000736s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000705s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0056s ]
+SQL: SELECT `id`,`pass`,`oid` FROM `user` WHERE `account` = 'chuzhong39' AND `status` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `organ` [ RunTime:0.0050s ]
+SQL: SELECT `name`,`rank`,`pid` FROM `organ` WHERE `id` = 77 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+INFO: Login => user_id :69name :XX初中
+NOTIC: [2] Missing argument 1 for Admin\Controller\LoginController::json_response(), called in D:\wamp\www\register_system\Application\Admin\Controller\LoginController.class.php on line 64 and defined D:\wamp\www\register_system\Application\Admin\Controller\LoginController.class.php 第 90 行.
+
+[ 2016-06-01T10:57:18+08:00 ] ::1 /register_system/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000695s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000881s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-06-01T10:57:18+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilindex.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000601s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000745s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0046s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_junior` = '77' AND student.status = 1 AND `civil_release` = 0 AND `lot_release` = 1 AND `civil_status` IN (1,2,3)  [ RunTime:0.0008s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_release` = 1 AND `lot_release` = 1 AND `civil_status` = 2 AND `civil_junior` = '77'  [ RunTime:0.0006s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_release` = 1 AND `civil_status` = 3 AND `lot_release` = 1 AND `civil_junior` = '77'  [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for Admin\Model\EnterModel::get_civilreginfo(), called in D:\wamp\www\register_system\Application\Admin\Model\EnterModel.class.php on line 86 and defined D:\wamp\www\register_system\Application\Admin\Model\EnterModel.class.php 第 111 行.
+NOTIC: [8] Undefined variable: type D:\wamp\www\register_system\Application\Admin\Model\EnterModel.class.php 第 112 行.
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_junior` = '77'  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `organ` [ RunTime:0.0047s ]
+SQL: SELECT `name` FROM `organ` WHERE `id` = 77 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `introduction` FROM `organ` WHERE `id` = 77 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0049s ]
+SQL: SELECT `register_end_time` FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000238s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000381s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\84cd247451ee3939ccb906c563ed0d64.php 第 205 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036504s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036650s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000291s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000563s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000692s ]
+
+[ 2016-06-01T10:57:18+08:00 ] ::1 /register_system/index.php/Admin/Index/notify_fail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000849s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000774s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000956s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0066s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0073s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_junior` = '77' AND student.status = 1 AND `civil_release` = 0 AND `lot_release` = 1 AND `civil_status` IN (1,2,3)  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Admin\Controller\BaseController::json_response(), called in D:\wamp\www\register_system\Application\Admin\Controller\IndexController.class.php on line 135 and defined D:\wamp\www\register_system\Application\Admin\Controller\BaseController.class.php 第 77 行.
+
+[ 2016-06-01T11:01:43+08:00 ] ::1 /register_system/index.php/Admin/User/change_passwd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000610s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001030s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001224s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000201s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000345s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\d1451d539d885c54c4285e5f163c4f1e.php 第 197 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034175s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034421s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001675s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001985s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001075s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001311s ]
+
+[ 2016-06-01T11:02:00+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilindex.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000490s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000712s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0049s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_junior` = '77' AND student.status = 1 AND `civil_release` = 0 AND `lot_release` = 1 AND `civil_status` IN (1,2,3)  [ RunTime:0.0008s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_release` = 1 AND `lot_release` = 1 AND `civil_status` = 2 AND `civil_junior` = '77'  [ RunTime:0.0005s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_release` = 1 AND `civil_status` = 3 AND `lot_release` = 1 AND `civil_junior` = '77'  [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Admin\Model\EnterModel::get_civilreginfo(), called in D:\wamp\www\register_system\Application\Admin\Model\EnterModel.class.php on line 86 and defined D:\wamp\www\register_system\Application\Admin\Model\EnterModel.class.php 第 111 行.
+NOTIC: [8] Undefined variable: type D:\wamp\www\register_system\Application\Admin\Model\EnterModel.class.php 第 112 行.
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_junior` = '77'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `organ` [ RunTime:0.0048s ]
+SQL: SELECT `name` FROM `organ` WHERE `id` = 77 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `introduction` FROM `organ` WHERE `id` = 77 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0049s ]
+SQL: SELECT `register_end_time` FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000264s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000454s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\84cd247451ee3939ccb906c563ed0d64.php 第 205 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019818s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019976s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000316s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000557s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000686s ]
+
+[ 2016-06-01T11:02:01+08:00 ] ::1 /register_system/index.php/Admin/Index/notify_fail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000862s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001220s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0048s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_junior` = '77' AND student.status = 1 AND `civil_release` = 0 AND `lot_release` = 1 AND `civil_status` IN (1,2,3)  [ RunTime:0.0006s ]
+NOTIC: [2] Missing argument 1 for Admin\Controller\BaseController::json_response(), called in D:\wamp\www\register_system\Application\Admin\Controller\IndexController.class.php on line 135 and defined D:\wamp\www\register_system\Application\Admin\Controller\BaseController.class.php 第 77 行.
+
+[ 2016-06-01T11:02:03+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilfail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000705s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000852s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001083s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0049s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_junior` = '77' AND student.status = 1 AND `civil_release` = 0 AND `lot_release` = 1 AND `civil_status` IN (1,2,3)  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000280s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000434s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\a17c5f92845432ef5df11974e3dd0936.php 第 213 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.084153s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.084384s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000914s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000804s ]
+
+[ 2016-06-01T11:03:19+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilfail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000585s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000729s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0209s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0052s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_junior` = '77' AND student.status = 1 AND `civil_release` = 0 AND `lot_release` = 1 AND `civil_status` IN (1,2,3)  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000412s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000683s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\a17c5f92845432ef5df11974e3dd0936.php 第 213 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033218s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033361s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000307s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000434s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000560s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000689s ]
+
+[ 2016-06-01T11:03:47+08:00 ] ::1 /register_system/index.php/Admin/Login/logout.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000749s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003633s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003879s ]
+INFO: Logout => user_id :69name :XX初中
+
+[ 2016-06-01T11:03:47+08:00 ] ::1 /register_system/index.php/Admin/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000484s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001097s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001309s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000301s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000519s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011462s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011658s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000407s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000533s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000726s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000904s ]
+
+[ 2016-06-01T11:03:47+08:00 ] ::1 /register_system/index.php/Admin/Login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000127s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000913s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000943s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001203s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000697s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000855s ]
+
+[ 2016-06-01T18:41:58+08:00 ] ::1 /register_system/index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016190s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007562s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007705s ]
+
+[ 2016-06-01T18:41:58+08:00 ] ::1 /register_system/index.php/Admin/Login/verify.html?0.4417837767721815
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000571s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000591s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000736s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.011400s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011919s ]
+
+[ 2016-06-01T18:42:05+08:00 ] ::1 /register_system/index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000855s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001045s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0143s ]
+SQL: SELECT `id`,`pass`,`oid` FROM `user` WHERE `account` = '4567891' AND `status` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `organ` [ RunTime:0.0057s ]
+SQL: SELECT `name`,`rank`,`pid` FROM `organ` WHERE `id` = 1 AND `status` = 0 LIMIT 1   [ RunTime:0.0004s ]
+INFO: Login => user_id :12name :新乡市
+NOTIC: [2] Missing argument 1 for Admin\Controller\LoginController::json_response(), called in D:\wamp\www\register_system\Application\Admin\Controller\LoginController.class.php on line 64 and defined D:\wamp\www\register_system\Application\Admin\Controller\LoginController.class.php 第 90 行.
+
+[ 2016-06-01T18:42:05+08:00 ] ::1 /register_system/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000075s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000869s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000860s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001094s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organ` [ RunTime:0.0074s ]
+SQL: SELECT `name` FROM `organ` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined property: Admin\Model\IndexModel::$oids D:\wamp\www\register_system\Application\Admin\Model\IndexModel.class.php 第 105 行.
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0062s ]
+SQL: SELECT count(*) as count FROM `student` WHERE `origin` = 1 AND `status` = 1 AND `oid` > 0  [ RunTime:0.0253s ]
+SQL: SELECT count(*) as count FROM `student` WHERE `origin` = 0 AND `status` = 1 AND `oid` > 0  [ RunTime:0.0182s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0050s ]
+SQL: SELECT count(*) as count FROM `register` right join student on register.sid = student.id and register.status <> 1  WHERE student.status = 1 AND student.oid > 0  [ RunTime:0.0157s ]
+SQL: SELECT count(*) as count FROM `register` right join student on register.sid = student.id and register.status <> 1  WHERE student.status = 1 AND student.oid > 0 AND ( (pub_release = 1 and pub_status= 1) or register.status = 3 )  [ RunTime:0.0006s ]
+SQL: SELECT count(*) as count FROM `register` right join student on register.sid = student.id and register.status <> 1  WHERE student.status = 1 AND student.oid > 0 AND `lot_release` = 1 AND `civil_release` = 1 AND `civil_status` = 2  [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0056s ]
+SQL: SELECT `register_end_time` FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `introduction` FROM `organ` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000369s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000629s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 222 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 222 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 222 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 222 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.131035s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.131373s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.008302s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008490s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000727s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000908s ]
+
+[ 2016-06-01T18:42:06+08:00 ] ::1 /register_system/index.php/Admin/Index/notify_info.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000805s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.012136s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012337s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Admin\Controller\BaseController::json_response(), called in D:\wamp\www\register_system\Application\Admin\Controller\IndexController.class.php on line 117 and defined D:\wamp\www\register_system\Application\Admin\Controller\BaseController.class.php 第 77 行.
+
+[ 2016-06-01T18:43:07+08:00 ] ::1 /register_system/index.php/Admin/Enter/lot_orginfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000717s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001373s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001731s ]
+NOTIC: [8] Undefined index: lot_orginfo D:\wamp\www\register_system\Application\Admin\Controller\BaseController.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0064s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`origin`,`sex`,`sid_num`,organ.name as sch_name,`original_school`,student.phone as phone,`civil_status`,`lot_release`,`civil_release`,register.status FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on civil_junior = organ.id  WHERE `civil_junior` <> '0' AND student.status = 1 ORDER BY register.lot_release asc,civil_status  [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000395s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000591s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined variable: organization D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 340 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.138337s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.138537s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002186s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002387s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001194s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001411s ]
+
+[ 2016-06-01T18:43:54+08:00 ] ::1 /register_system/index.php/Admin/Enter/lot_orginfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000778s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000938s ]
+NOTIC: [8] Undefined index: lot_orginfo D:\wamp\www\register_system\Application\Admin\Controller\BaseController.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0049s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`origin`,`sex`,`sid_num`,organ.name as sch_name,`original_school`,student.phone as phone,`civil_status`,`lot_release`,`civil_release`,register.status FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on civil_junior = organ.id  WHERE `civil_junior` <> '0' AND student.status = 1 ORDER BY register.lot_release asc,civil_status  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000502s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000704s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined variable: organization D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 340 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034008s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034215s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000858s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001165s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001193s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001424s ]
+
+[ 2016-06-01T18:44:08+08:00 ] ::1 /register_system/index.php/Admin/Enter/lotNum.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000533s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000826s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000957s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0335s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0497s ]
+SQL: UPDATE `register` SET `civil_status`='1' WHERE `id` IN ('2','5') [ RunTime:0.0848s ]
+
+[ 2016-06-01T18:44:10+08:00 ] ::1 /register_system/index.php/Admin/Enter/lot_orginfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000136s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006098s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002945s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003951s ]
+NOTIC: [8] Undefined index: lot_orginfo D:\wamp\www\register_system\Application\Admin\Controller\BaseController.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0138s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0180s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`origin`,`sex`,`sid_num`,organ.name as sch_name,`original_school`,student.phone as phone,`civil_status`,`lot_release`,`civil_release`,register.status FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on civil_junior = organ.id  WHERE `civil_junior` <> '0' AND student.status = 1 ORDER BY register.lot_release asc,civil_status  [ RunTime:0.0027s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002676s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined variable: organization D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 340 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.082897s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.083712s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002020s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002297s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003351s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003816s ]
+
+[ 2016-06-01T18:44:18+08:00 ] ::1 /register_system/index.php/Admin/Enter/NlotNum.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000828s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000692s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000828s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0056s ]
+SQL: UPDATE `register` SET `civil_status`='4' WHERE `id` IN ('2') [ RunTime:0.0760s ]
+
+[ 2016-06-01T18:44:22+08:00 ] ::1 /register_system/index.php/Admin/Enter/NlotNum.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000521s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001077s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001305s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0269s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0059s ]
+SQL: UPDATE `register` SET `civil_status`='4' WHERE `id` IN ('5') [ RunTime:0.0592s ]
+
+[ 2016-06-01T18:44:31+08:00 ] ::1 /register_system/index.php/Admin/Enter/lotNum.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000708s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002200s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0158s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0051s ]
+SQL: UPDATE `register` SET `civil_status`='1' WHERE `id` IN ('2','5') [ RunTime:0.0603s ]
+
+[ 2016-06-01T18:44:33+08:00 ] ::1 /register_system/index.php/Admin/Enter/lot_orginfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000896s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001249s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001525s ]
+NOTIC: [8] Undefined index: lot_orginfo D:\wamp\www\register_system\Application\Admin\Controller\BaseController.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0070s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`origin`,`sex`,`sid_num`,organ.name as sch_name,`original_school`,student.phone as phone,`civil_status`,`lot_release`,`civil_release`,register.status FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on civil_junior = organ.id  WHERE `civil_junior` <> '0' AND student.status = 1 ORDER BY register.lot_release asc,civil_status  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000334s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000516s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined variable: organization D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 340 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033186s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033409s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000714s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001090s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001254s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001458s ]
+
+[ 2016-06-01T18:45:06+08:00 ] ::1 /register_system/index.php/Admin/Enter/lotNum.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000753s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001048s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0268s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0322s ]
+SQL: UPDATE `register` SET `civil_status`='1' WHERE `id` IN ('2','5','1','4','3') [ RunTime:0.0566s ]
+
+[ 2016-06-01T18:45:08+08:00 ] ::1 /register_system/index.php/Admin/Enter/lot_orginfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000852s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000959s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001244s ]
+NOTIC: [8] Undefined index: lot_orginfo D:\wamp\www\register_system\Application\Admin\Controller\BaseController.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0289s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0059s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`origin`,`sex`,`sid_num`,organ.name as sch_name,`original_school`,student.phone as phone,`civil_status`,`lot_release`,`civil_release`,register.status FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on civil_junior = organ.id  WHERE `civil_junior` <> '0' AND student.status = 1 ORDER BY register.lot_release asc,civil_status  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000338s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000507s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined variable: organization D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 340 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033450s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033757s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000665s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000840s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000721s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000855s ]
+
+[ 2016-06-01T18:45:12+08:00 ] ::1 /register_system/index.php/Admin/Enter/cilil_issued_lot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000231s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002894s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001015s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001333s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0043s ]
+SQL: UPDATE `register` SET `lot_release`='1' WHERE `civil_status` = 1 [ RunTime:0.0007s ]
+SQL: UPDATE `register` SET `lot_release`='1',`civil_release`='1' WHERE `civil_status` = 4 [ RunTime:0.0008s ]
+
+[ 2016-06-01T18:45:14+08:00 ] ::1 /register_system/index.php/Admin/Enter/lot_orginfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000067s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000940s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001381s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001650s ]
+NOTIC: [8] Undefined index: lot_orginfo D:\wamp\www\register_system\Application\Admin\Controller\BaseController.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0053s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`origin`,`sex`,`sid_num`,organ.name as sch_name,`original_school`,student.phone as phone,`civil_status`,`lot_release`,`civil_release`,register.status FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on civil_junior = organ.id  WHERE `civil_junior` <> '0' AND student.status = 1 ORDER BY register.lot_release asc,civil_status  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000340s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000493s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined index: url D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 210 行.
+NOTIC: [8] Undefined variable: organization D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5aa16666c5fb3fe3e86f618b1b704a5b.php 第 340 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031841s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032008s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000744s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000804s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000937s ]
+
+[ 2016-06-01T18:45:23+08:00 ] ::1 /register_system/index.php/Admin/Login/logout.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000078s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001640s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000784s ]
+INFO: Logout => user_id :12name :新乡市
+
+[ 2016-06-01T18:45:23+08:00 ] ::1 /register_system/index.php/Admin/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000585s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000728s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000202s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000465s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039051s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039287s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000476s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000690s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000650s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000821s ]
+
+[ 2016-06-01T18:45:23+08:00 ] ::1 /register_system/index.php/Admin/Login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000745s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001075s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001413s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001247s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001546s ]
+
+[ 2016-06-01T18:45:41+08:00 ] ::1 /register_system/index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000604s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000729s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0218s ]
+SQL: SELECT `id`,`pass`,`oid` FROM `user` WHERE `account` = 'chuzhong39' AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organ` [ RunTime:0.0047s ]
+SQL: SELECT `name`,`rank`,`pid` FROM `organ` WHERE `id` = 77 AND `status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+INFO: Login => user_id :69name :XX初中
+NOTIC: [2] Missing argument 1 for Admin\Controller\LoginController::json_response(), called in D:\wamp\www\register_system\Application\Admin\Controller\LoginController.class.php on line 64 and defined D:\wamp\www\register_system\Application\Admin\Controller\LoginController.class.php 第 90 行.
+
+[ 2016-06-01T18:45:41+08:00 ] ::1 /register_system/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000693s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000771s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-06-01T18:45:41+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilindex.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000572s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000769s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000951s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0046s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_junior` = '77' AND student.status = 1 AND `civil_release` = 0 AND `lot_release` = 1 AND `civil_status` IN (1,2,3)  [ RunTime:0.0008s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_release` = 1 AND `lot_release` = 1 AND `civil_status` = 2 AND `civil_junior` = '77'  [ RunTime:0.0007s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_release` = 1 AND `civil_status` = 3 AND `lot_release` = 1 AND `civil_junior` = '77'  [ RunTime:0.0006s ]
+NOTIC: [2] Missing argument 1 for Admin\Model\EnterModel::get_civilreginfo(), called in D:\wamp\www\register_system\Application\Admin\Model\EnterModel.class.php on line 86 and defined D:\wamp\www\register_system\Application\Admin\Model\EnterModel.class.php 第 111 行.
+NOTIC: [8] Undefined variable: type D:\wamp\www\register_system\Application\Admin\Model\EnterModel.class.php 第 112 行.
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_junior` = '77'  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `organ` [ RunTime:0.0058s ]
+SQL: SELECT `name` FROM `organ` WHERE `id` = 77 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `introduction` FROM `organ` WHERE `id` = 77 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0045s ]
+SQL: SELECT `register_end_time` FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000242s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000432s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\84cd247451ee3939ccb906c563ed0d64.php 第 205 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062703s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062904s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002127s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002407s ]
+
+[ 2016-06-01T18:45:41+08:00 ] ::1 /register_system/index.php/Admin/Index/notify_fail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001245s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001009s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001291s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0078s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_junior` = '77' AND student.status = 1 AND `civil_release` = 0 AND `lot_release` = 1 AND `civil_status` IN (1,2,3)  [ RunTime:0.0006s ]
+
+[ 2016-06-01T18:45:49+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilreginfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000742s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000793s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001066s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0223s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Admin\Model\EnterModel::get_civilreginfo(), called in D:\wamp\www\register_system\Application\Admin\Controller\EnterController.class.php on line 214 and defined D:\wamp\www\register_system\Application\Admin\Model\EnterModel.class.php 第 111 行.
+NOTIC: [8] Undefined variable: type D:\wamp\www\register_system\Application\Admin\Model\EnterModel.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0052s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_junior` = '77'  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000227s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000404s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5984b98dcc5e6896f1c0d8eb4b4ef23b.php 第 210 行.
+NOTIC: [8] Undefined variable: organization D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5984b98dcc5e6896f1c0d8eb4b4ef23b.php 第 339 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.065190s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.065473s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000787s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000850s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001086s ]
+
+[ 2016-06-01T18:45:52+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilfail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000466s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000608s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000769s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0046s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_junior` = '77' AND student.status = 1 AND `civil_release` = 0 AND `lot_release` = 1 AND `civil_status` IN (1,2,3)  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000419s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000693s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\a17c5f92845432ef5df11974e3dd0936.php 第 213 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.055233s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.055500s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000400s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000558s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000683s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000906s ]
+
+[ 2016-06-01T18:54:23+08:00 ] ::1 /register_system/index.php/Admin/Enter/civil_studnet_info_export.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000697s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000835s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001047s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0158s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0057s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_junior` = '77' AND student.status = 1 AND `civil_release` = 0 AND `lot_release` = 1 AND `civil_status` IN (1,2,3)  [ RunTime:0.0011s ]
+
+[ 2016-06-01T18:58:45+08:00 ] ::1 /register_system/index.php/Admin/Enter/civiladopt.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000893s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000884s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001132s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0066s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0053s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_release` = 1 AND `lot_release` = 1 AND `civil_status` = 2 AND `civil_junior` = '77'  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000464s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000799s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\feacc377613ce3616e669d2ab3b818f6.php 第 204 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.042462s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042605s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000997s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001232s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001659s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001881s ]
+
+[ 2016-06-01T18:58:46+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilannals.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000984s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001328s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001547s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0057s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_release` = 1 AND `civil_status` = 3 AND `lot_release` = 1 AND `civil_junior` = '77'  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000217s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000372s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\604951e5d0a30592e436720a58d7f85b.php 第 204 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044350s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044498s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000619s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000750s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000945s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001124s ]
+
+[ 2016-06-01T18:58:50+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilfail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000526s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001351s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001764s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0052s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_junior` = '77' AND student.status = 1 AND `civil_release` = 0 AND `lot_release` = 1 AND `civil_status` IN (1,2,3)  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000425s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000666s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\a17c5f92845432ef5df11974e3dd0936.php 第 213 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029899s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030101s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000750s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000964s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001055s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001273s ]
+
+[ 2016-06-01T20:30:31+08:00 ] ::1 /register_system/index.php/Admin/Enter/civiladopt.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016805s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011826s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012317s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0058s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_release` = 1 AND `lot_release` = 1 AND `civil_status` = 2 AND `civil_junior` = '77'  [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000211s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000370s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\feacc377613ce3616e669d2ab3b818f6.php 第 204 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.117344s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.117502s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.018861s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.019011s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.016320s ]
+INFO: [ app_end ] --END-- [ RunTime:0.016521s ]
+
+[ 2016-06-01T20:30:34+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilfail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000484s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000962s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0051s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_junior` = '77' AND student.status = 1 AND `civil_release` = 0 AND `lot_release` = 1 AND `civil_status` IN (1,2,3)  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000294s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000503s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\a17c5f92845432ef5df11974e3dd0936.php 第 213 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046345s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046850s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000863s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000752s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000939s ]
+
+[ 2016-06-01T20:30:42+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilannals.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000935s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001180s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0070s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_release` = 1 AND `civil_status` = 3 AND `lot_release` = 1 AND `civil_junior` = '77'  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000206s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000351s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\604951e5d0a30592e436720a58d7f85b.php 第 204 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036196s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036426s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000371s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000574s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000707s ]
+
+[ 2016-06-01T20:30:44+08:00 ] ::1 /register_system/index.php/Admin/Enter/civiladopt.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000466s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000591s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000733s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0050s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_release` = 1 AND `lot_release` = 1 AND `civil_status` = 2 AND `civil_junior` = '77'  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000222s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000389s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\feacc377613ce3616e669d2ab3b818f6.php 第 204 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025058s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025207s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000369s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000494s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000591s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000747s ]
+
+[ 2016-06-01T20:57:06+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilreginfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000863s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000799s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000957s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Admin\Model\EnterModel::get_civilreginfo(), called in D:\wamp\www\register_system\Application\Admin\Controller\EnterController.class.php on line 214 and defined D:\wamp\www\register_system\Application\Admin\Model\EnterModel.class.php 第 111 行.
+NOTIC: [8] Undefined variable: type D:\wamp\www\register_system\Application\Admin\Model\EnterModel.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0053s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_junior` = '77'  [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000339s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000562s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5984b98dcc5e6896f1c0d8eb4b4ef23b.php 第 210 行.
+NOTIC: [8] Undefined variable: organization D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5984b98dcc5e6896f1c0d8eb4b4ef23b.php 第 339 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.065428s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.065626s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000561s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000724s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000859s ]
+
+[ 2016-06-01T20:57:55+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilreginfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000761s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000604s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000754s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Admin\Model\EnterModel::get_civilreginfo(), called in D:\wamp\www\register_system\Application\Admin\Controller\EnterController.class.php on line 214 and defined D:\wamp\www\register_system\Application\Admin\Model\EnterModel.class.php 第 111 行.
+NOTIC: [8] Undefined variable: type D:\wamp\www\register_system\Application\Admin\Model\EnterModel.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0048s ]
+SQL: SELECT register.id as register_id,student.name as stu_name,`sid`,`sex`,`sid_num`,`original_school`,student.address,`origin`,`account`,a.name as civil_name,b.name as assign_name,d.name as oname,c.name as cname,d.rank as drank,student.phone as phone,`lot_release`,`civil_status`,`civil_status`,`civil_release`,`pub_status`,`pub_release` FROM `register` INNER JOIN student on student.id = register.sid and student.status = 1 left join organ as a on civil_junior = a.id left join organ as b on assign_junior = b.id left join organ as c on student.oid = c.id left join organ as d on c.pid = d.id  WHERE `civil_junior` = '77'  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000248s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000417s ]
+NOTIC: [8] Undefined offset: 1 D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5984b98dcc5e6896f1c0d8eb4b4ef23b.php 第 210 行.
+NOTIC: [8] Undefined variable: organization D:\wamp\www\register_system\Application\Runtime\Cache\Admin\5984b98dcc5e6896f1c0d8eb4b4ef23b.php 第 339 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032553s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032798s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000809s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001225s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001505s ]
+
+[ 2016-06-01T21:02:57+08:00 ] ::1 /register_system/index.php/Admin/Org/perfectInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000538s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001008s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001234s ]
+
+[ 2016-06-01T21:03:00+08:00 ] ::1 /register_system/index.php/Admin/Org/orginfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000700s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000795s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000976s ]
+

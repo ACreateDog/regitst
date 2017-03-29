@@ -1,0 +1,88 @@
+<!--detail Modal Templates-->
+<div id="detailModal" style="display:none;">
+    <div class="dd dd-draghandle darker">
+        <ol class="dd-list">
+            <li class="dd-item dd2-item" data-id="13">
+                <div class="dd-handle dd2-handle">
+                    机构名称
+                </div>
+                <div class="dd2-content" for="name"></div>
+            </li>
+            <li class="dd-item dd2-item" data-id="13">
+                <div class="dd-handle dd2-handle">
+                    机构类型
+                </div>
+                <div class="dd2-content" for="rank" id="rank"></div>
+            </li>
+
+            <li class="dd-item dd2-item" data-id="14">
+                <div class="dd-handle dd2-handle">
+                    上级机构
+                </div>
+                <div class="dd2-content" for="parent"></div>
+            </li>
+
+            <li class="dd-item dd2-item dd-collapsed">
+                <div class="dd-handle dd2-handle">
+                    地址
+                </div>
+                <div class="dd2-content" for="address"></div>
+            </li>
+            <li class="dd-item dd2-item dd-collapsed">
+                <div class="dd-handle dd2-handle">
+                    联 系 人
+                </div>
+                <div class="dd2-content" for="handler"></div>
+            </li>
+            <li class="dd-item dd2-item dd-collapsed">
+                <div class="dd-handle dd2-handle">
+                    联系电话
+                </div>
+                <div class="dd2-content" for="phone"></div>
+            </li>
+            <li class="dd-item dd2-item dd-collapsed">
+                <div class="dd-handle dd2-handle">
+                    简介
+                </div>
+                <div class="dd2-content" for="introduction"></div>
+            </li>
+        </ol>
+    </div>
+</div>
+<!--End detail Modal Templates-->
+<input type="hidden" id="get-org-info-url" value="{:U('Org/get_organ_info')}" >
+
+<script>
+    $('.table').on("click", 'a.detail', function(e){
+        e.preventDefault();
+        var oid = $(this).parents('tr').data('id');
+        var url = $('#get-org-info-url').val();
+        $.post(url,{oid:oid},function(data){
+            bootbox.dialog({
+                message: $("#detailModal").html(),
+                title: "机构详情",
+                className: "modal-primary",
+                buttons: {
+                    success: {
+                        label: "确定",
+                        className: "btn-blue",
+                        callback: function () {}
+                    },
+                }
+            });
+            $('.modal-primary').find('.dd2-content').each(function(){
+                var val = data.data[$(this).attr('for')]
+                $(this).text( val ? val : '无');
+            })
+            var org_type = '';
+            switch (L_trim($('.modal-primary #rank').text())){
+                case '1' : org_type = '市教育局';break;
+                case '2' : org_type = '区教育局';break;
+                case '3' : org_type = '公办初中';break;
+                case '4' : org_type = '民办初中';break;
+                case '5' : org_type = '小学';break;
+            }
+            $('.modal-primary #rank').text(org_type);
+        })
+    });
+</script>

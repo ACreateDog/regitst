@@ -1,0 +1,171 @@
+<extend name="Base:base" />
+<block name="css_link">
+    <link href="__PUBLIC__/assets/css/dataTables.bootstrap.css" rel="stylesheet"/>
+    <link href="__PUBLIC__/admin/student/css/student_info.css" rel="stylesheet"/>
+</block>
+<block name="main">
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <div class="widget">
+                <div class="widget-header ">
+                    <span where={$where} class="widget-caption">{$reminder}</span>
+                    <div class="widget-buttons">
+                        <a href="#" data-toggle="maximize">
+                            <i class="fa fa-expand"></i>
+                        </a>
+                        <a href="#" data-toggle="collapse">
+                            <i class="fa fa-minus"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="widget-body">
+
+                    <div class="table-toolbar">
+                        <div class="panel-group accordion" id="accordion" style="margin-bottom: 8px;">
+                            <div class="panel panel-default">
+                                <div class="panel-heading ">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle collapsed" data-toggle="collapse"
+                                           data-parent="#accordion"
+                                           href="#collapseOne">
+                                            <i class="fa fa-search"></i> 高级搜索
+                                        </a>
+                                    </h4>
+                                </div>
+
+                                <div id="collapseOne" class="panel-collapse collapse">
+                                    <div class="panel-body">
+
+                                        <label>事务类型</label>
+                                        <select  id="grasp_degree">
+                                            <option value="0">待分配</option>
+                                            <option value="1">已分配</option>
+                                        </select>
+                                        <button id="seek" type="button" class="btn btn-primary" style="padding: 7px; margin-top: -3px;">
+                                            <i class="fa fa-search"></i>搜索
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-toolbar operation">
+                        <div class="btn-group">
+                            <a id="import_excel" href="javascript:void(0);" class="btn btn-default">
+                                <i class="glyphicon glyphicon-log-in"></i>导入
+                            </a>
+                        </div>
+                        <div class="btn-group">
+                            <a type="button" id="export" class="btn btn-default" href="{:U('Register/export_excel')}?type=issue&name={$reminder}">
+                                <i class="fa fa-download"></i>导出
+                            </a>
+                        </div>
+                        <if condition="(!empty($student_info)) and ($where eq 0)">
+                            <div class="btn-group">
+                                <a type="button" id="issue" class="btn btn-default" url="{:U('Register/issue')}">
+                                    <i class="glyphicon glyphicon-volume-up"></i>立即发布
+                                </a>
+                            </div>
+                            <div class="btn-group">
+                                <a type="button" id="checkbox_assign" class="btn btn-default">分配学校</a>
+                            </div>
+                        </if>
+                    </div>
+
+                    <table class="table_data table table-striped table-hover table-bordered" id="student_info">
+                        <thead>
+                        <tr role="row">
+                            <if condition="$where eq 0">
+                                <th>
+                            <else/>
+                                <th style="display: none">
+                            </if>
+                                    <label>
+                                        <input id="checked_all" type="checkbox">
+                                        <span class="text"></span>
+                                    </label>
+                                </th>
+                            <th>学生姓名</th>
+                            <th>性别</th>
+                            <th>学生学籍</th>
+                            <th>生源类型</th>
+                            <th>志愿学校(民办)</th>
+                            <th>志愿学校(公办)</th>
+                            <th>分配学校</th>
+                            <!--<th>所属学校</th>-->
+                            <!--<th>所属班级</th>-->
+                            <!--<th>录取状态(民办)</th>-->
+                            <!--<th>录取状态(公办)</th>-->
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody class="data_user">
+                        <foreach name="student_info" item="vo">
+                            <tr>
+                                <if condition="$where eq 0">
+                                    <td>
+                                <else/>
+                                    <td style="display: none">
+                                </if>
+                                        <label>
+                                            <input value="{$vo.id}" class="student_checked" type="checkbox">
+                                            <span class="text"></span>
+                                        </label>
+                                    </td>
+                                <td>{$vo.name}</td>
+                                <td>{$vo.sex}</td>
+                                <td>{$vo.sid_num}</td>
+                                <td>{$vo.origin}</td>
+                                <td>{$vo.civil_junior}</td>
+                                <td>{$vo.pub_junior}</td>
+                                <td>{$vo.assign_junior}</td>
+                                <!--<td>{$vo.civil_status}</td>-->
+                                <!--<td>{$vo.pub_status}</td>-->
+                                <td>{$vo.assign_junior_status}</td>
+                                <td>{$vo.assign_junior_operation}</td>
+                            </tr>
+                        </foreach>
+                        </tbody>
+                    </table>
+                    <input value="{:U('Register/download_template')}" id="download-template-url" type="hidden">
+                    <input type="hidden" id="present_url" save_volunteer="{:U('save_student_volunteer')}" value="{:U('assign_junior')}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="again_write modal modal-darkorange">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">分配学校</h4>
+                </div>
+                <div class="modal-body">
+                    <label for="pub_junior" class="col-sm-3 control-label pub_junior_title"> 公办初中填报：</label>
+                    <select id="pub_junior" name="pub_junior" class="form-control">
+                        <foreach name="pub_secondary_school" item="vo">
+                            <option value="{$vo['id']}">{$vo['name']}</option>
+                        </foreach>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="affirm_save btn btn-default">确认</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <input value="{:U('Register/import_assign_junior')}" id="import-url" type="hidden">
+</block>
+<block name="js_link">
+    <script src="__PUBLIC__/assets/js/datatable/jquery.dataTables.min.js"></script>
+    <script src="__PUBLIC__/assets/js/datatable/dataTables.bootstrap.min.js"></script>
+    <script src="__PUBLIC__/assets/js/datetime/moment.js"></script>
+    <script src="__PUBLIC__/assets/js/datetime/daterangepicker.js"></script>
+    <script src="__PUBLIC__/admin/student/js/assign_junior.js"></script>
+    <script src="__PUBLIC__/admin/student/js/refuse_info.js"></script>
+    <include file="Org:import"/>
+</block>

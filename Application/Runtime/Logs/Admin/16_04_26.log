@@ -1,0 +1,21 @@
+[ 2016-04-26T09:14:38+08:00 ] ::1 /register_system/index.php/Admin/Enter/addAccess
+ERR: 非法操作:addAccess
+
+[ 2016-04-26T11:23:10+08:00 ] ::1 /register_system/index.php/Admin/Enter/adopt.html
+ERR: 非法操作:adopt
+
+[ 2016-04-26T15:11:59+08:00 ] ::1 /register_system/index.php/Admin/Enter/addAccess
+ERR: 非法操作:addAccess
+
+[ 2016-04-26T16:28:07+08:00 ] ::1 /register_system/index.php/Admin/Enter/adopt
+ERR: 非法操作:adopt
+
+[ 2016-04-26T16:29:37+08:00 ] ::1 /register_system/index.php/Admin/Enter/fail
+ERR: 非法操作:fail
+
+[ 2016-04-26T22:14:29+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilfail.html
+ERR: 模板不存在:./Application/Admin/View/Enter/civilfail.html
+
+[ 2016-04-26T22:23:42+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilindex.html
+ERR: 模板不存在:./Application/Admin/View/Enter/civilindex.html
+

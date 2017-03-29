@@ -1,0 +1,94 @@
+[ 2016-05-02T17:12:05+08:00 ] ::1 /register_system/index.php/Admin/ExportExel/get_exel.html
+ERR: 无法加载控制器:ExportExel
+
+[ 2016-05-02T20:27:59+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubreginfo.html
+ERR: 表达式错误:ED
+
+[ 2016-05-02T20:36:12+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubreginfo.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNION SELECT * FROM' at line 1
+ [ SQL语句 ] : SELECT student.name as stu_name,`sex`,`sid_num`,organ.name as sch_name,student.phone as phone,`pub_status`,`pub_release` FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  UNION SELECT * FROM   UNION SELECT * FROM  
+
+[ 2016-05-02T20:36:24+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubreginfo.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNION SELECT * FROM' at line 1
+ [ SQL语句 ] : SELECT * FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  UNION SELECT * FROM   UNION SELECT * FROM  
+
+[ 2016-05-02T20:36:25+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubreginfo.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNION SELECT * FROM' at line 1
+ [ SQL语句 ] : SELECT * FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  UNION SELECT * FROM   UNION SELECT * FROM  
+
+[ 2016-05-02T20:36:26+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubreginfo.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNION SELECT * FROM' at line 1
+ [ SQL语句 ] : SELECT * FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  UNION SELECT * FROM   UNION SELECT * FROM  
+
+[ 2016-05-02T20:36:26+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubreginfo.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNION SELECT * FROM' at line 1
+ [ SQL语句 ] : SELECT * FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  UNION SELECT * FROM   UNION SELECT * FROM  
+
+[ 2016-05-02T20:36:26+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubreginfo.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNION SELECT * FROM' at line 1
+ [ SQL语句 ] : SELECT * FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  UNION SELECT * FROM   UNION SELECT * FROM  
+
+[ 2016-05-02T20:36:26+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubreginfo.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNION SELECT * FROM' at line 1
+ [ SQL语句 ] : SELECT * FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  UNION SELECT * FROM   UNION SELECT * FROM  
+
+[ 2016-05-02T20:36:26+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubreginfo.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNION SELECT * FROM' at line 1
+ [ SQL语句 ] : SELECT * FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  UNION SELECT * FROM   UNION SELECT * FROM  
+
+[ 2016-05-02T20:36:26+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubreginfo.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNION SELECT * FROM' at line 1
+ [ SQL语句 ] : SELECT * FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  UNION SELECT * FROM   UNION SELECT * FROM  
+
+[ 2016-05-02T20:36:27+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubreginfo.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNION SELECT * FROM' at line 1
+ [ SQL语句 ] : SELECT * FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  UNION SELECT * FROM   UNION SELECT * FROM  
+
+[ 2016-05-02T20:36:27+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubreginfo.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNION SELECT * FROM' at line 1
+ [ SQL语句 ] : SELECT * FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  UNION SELECT * FROM   UNION SELECT * FROM  
+
+[ 2016-05-02T20:36:27+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubreginfo.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNION SELECT * FROM' at line 1
+ [ SQL语句 ] : SELECT * FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  UNION SELECT * FROM   UNION SELECT * FROM  
+
+[ 2016-05-02T20:36:27+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubreginfo.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNION SELECT * FROM' at line 1
+ [ SQL语句 ] : SELECT * FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  UNION SELECT * FROM   UNION SELECT * FROM  
+
+[ 2016-05-02T20:36:32+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubreginfo.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNION SELECT * FROM' at line 1
+ [ SQL语句 ] : SELECT student.name as stu_name,`sex`,`sid_num`,organ.name as sch_name,student.phone as phone,`pub_status`,`pub_release` FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  UNION SELECT * FROM   UNION SELECT * FROM  
+
+[ 2016-05-02T20:36:33+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubreginfo.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNION SELECT * FROM' at line 1
+ [ SQL语句 ] : SELECT student.name as stu_name,`sex`,`sid_num`,organ.name as sch_name,student.phone as phone,`pub_status`,`pub_release` FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  UNION SELECT * FROM   UNION SELECT * FROM  
+
+[ 2016-05-02T20:39:18+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubreginfo.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNION SELECT * FROM' at line 1
+ [ SQL语句 ] : SELECT student.name as stu_name,`sex`,`sid_num`,organ.name as sch_name,student.phone as phone,`pub_status`,`pub_release` FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  UNION SELECT * FROM   UNION SELECT * FROM  
+
+[ 2016-05-02T20:39:19+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubreginfo.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNION SELECT * FROM' at line 1
+ [ SQL语句 ] : SELECT student.name as stu_name,`sex`,`sid_num`,organ.name as sch_name,student.phone as phone,`pub_status`,`pub_release` FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  UNION SELECT * FROM   UNION SELECT * FROM  
+
+[ 2016-05-02T20:39:19+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubreginfo.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNION SELECT * FROM' at line 1
+ [ SQL语句 ] : SELECT student.name as stu_name,`sex`,`sid_num`,organ.name as sch_name,student.phone as phone,`pub_status`,`pub_release` FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  UNION SELECT * FROM   UNION SELECT * FROM  
+
+[ 2016-05-02T20:39:19+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubreginfo.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNION SELECT * FROM' at line 1
+ [ SQL语句 ] : SELECT student.name as stu_name,`sex`,`sid_num`,organ.name as sch_name,student.phone as phone,`pub_status`,`pub_release` FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  UNION SELECT * FROM   UNION SELECT * FROM  
+
+[ 2016-05-02T20:39:20+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubreginfo.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNION SELECT * FROM' at line 1
+ [ SQL语句 ] : SELECT student.name as stu_name,`sex`,`sid_num`,organ.name as sch_name,student.phone as phone,`pub_status`,`pub_release` FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  UNION SELECT * FROM   UNION SELECT * FROM  
+
+[ 2016-05-02T20:39:20+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubreginfo.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNION SELECT * FROM' at line 1
+ [ SQL语句 ] : SELECT student.name as stu_name,`sex`,`sid_num`,organ.name as sch_name,student.phone as phone,`pub_status`,`pub_release` FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  UNION SELECT * FROM   UNION SELECT * FROM  
+
+[ 2016-05-02T20:39:20+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubreginfo.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNION SELECT * FROM' at line 1
+ [ SQL语句 ] : SELECT student.name as stu_name,`sex`,`sid_num`,organ.name as sch_name,student.phone as phone,`pub_status`,`pub_release` FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  UNION SELECT * FROM   UNION SELECT * FROM  
+

@@ -1,0 +1,322 @@
+[ 2016-05-08T08:19:37+08:00 ] ::1 /register_system/index.php/Admin/Enter/lotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000910s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001673s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0045s ]
+SQL: UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') [ RunTime:0.8617s ]
+
+[ 2016-05-08T09:59:54+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000708s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001157s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0043s ]
+SQL: SELECT student.name as stu_name,`sex`,`sid_num`,organ.name as sch_name,student.phone as phone,`pub_status`,`pub_release` FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  WHERE student.status = 0 AND `pub_junior` = 9 AND ( (civil_release=1 and civil_status=3) or (civil_release=0 and civil_status=0) or civil_junior=0 )  [ RunTime:0.0005s ]
+
+[ 2016-05-08T10:00:32+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001113s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001610s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.1526s ]
+SQL: SELECT student.name as stu_name,`sex`,`sid_num`,organ.name as sch_name,student.phone as phone,`pub_status`,`pub_release` FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  WHERE student.status = 0 AND `pub_junior` = 9 AND ( (civil_release=1 and civil_status=3) or (civil_release=0 and civil_status=0) or civil_junior=0 )  [ RunTime:0.0011s ]
+
+[ 2016-05-08T10:00:50+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html?type=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000775s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001237s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0139s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0041s ]
+SQL: SELECT student.name as stu_name,`sex`,`sid_num`,organ.name as sch_name,student.phone as phone,`pub_status`,`pub_release` FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  WHERE student.status = 0 AND `pub_junior` = 9 AND ( (civil_release=1 and civil_status=3) or (civil_release=0 and civil_status=0) or civil_junior=0 )  [ RunTime:0.0004s ]
+
+[ 2016-05-08T14:46:02+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T14:46:28+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T14:46:29+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T14:46:37+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T15:17:00+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:17:46+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:17:47+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:17:47+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:17:47+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:17:47+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:17:47+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:17:50+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:20:32+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:20:33+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:20:34+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:20:34+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:20:34+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:20:35+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:20:35+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:20:35+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:20:45+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:20:50+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:21:09+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:21:09+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:21:09+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:21:10+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:21:12+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:21:12+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:21:13+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:21:13+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:21:13+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:21:13+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:21:13+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:21:13+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:21:14+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:21:14+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:21:14+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:21:14+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:21:14+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Think\Controller:getExcel方法不存在！
+
+[ 2016-05-08T15:23:47+08:00 ] ::1 /register_system/index.php/Admin/ExportExel/get_exel.html
+ERR: 无法加载控制器:ExportExel
+
+[ 2016-05-08T15:24:44+08:00 ] ::1 /register_system/index.php/Admin/ExportExel/get_exel.html
+ERR: 无法加载控制器:ExportExel
+
+[ 2016-05-08T15:24:45+08:00 ] ::1 /register_system/index.php/Admin/ExportExel/get_exel.html
+ERR: 无法加载控制器:ExportExel
+
+[ 2016-05-08T15:24:45+08:00 ] ::1 /register_system/index.php/Admin/ExportExel/get_exel.html
+ERR: 无法加载控制器:ExportExel
+
+[ 2016-05-08T15:24:45+08:00 ] ::1 /register_system/index.php/Admin/ExportExel/get_exel.html
+ERR: 无法加载控制器:ExportExel
+
+[ 2016-05-08T15:24:45+08:00 ] ::1 /register_system/index.php/Admin/ExportExel/get_exel.html
+ERR: 无法加载控制器:ExportExel
+
+[ 2016-05-08T15:54:05+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Invalid cell coordinate A.'2'
+
+[ 2016-05-08T15:57:32+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T15:59:39+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T15:59:40+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T15:59:40+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T15:59:41+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T15:59:41+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T15:59:41+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T15:59:41+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T15:59:42+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T15:59:55+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T15:59:56+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T15:59:57+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T15:59:57+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T15:59:57+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T15:59:57+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T15:59:58+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T15:59:58+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T15:59:58+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T16:00:19+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T16:00:20+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T16:02:42+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Cell coordinate can not be zero-length string
+
+[ 2016-05-08T16:02:43+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Cell coordinate can not be zero-length string
+
+[ 2016-05-08T16:03:08+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Cell coordinate can not be zero-length string
+
+[ 2016-05-08T16:03:08+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Cell coordinate can not be zero-length string
+
+[ 2016-05-08T16:03:09+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Cell coordinate can not be zero-length string
+
+[ 2016-05-08T16:03:14+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Cell coordinate can not be zero-length string
+
+[ 2016-05-08T16:03:15+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+ERR: Cell coordinate can not be zero-length string
+
+[ 2016-05-08T16:03:18+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export
+ERR: Cell coordinate can not be zero-length string
+
+[ 2016-05-08T16:03:25+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export
+ERR: Cell coordinate can not be zero-length string
+
+[ 2016-05-08T16:03:32+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export
+ERR: Cell coordinate can not be zero-length string
+
+[ 2016-05-08T16:05:05+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T16:05:35+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T16:05:36+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T16:05:36+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T16:05:46+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T16:05:46+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T16:05:47+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T16:05:58+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T16:06:08+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T16:06:29+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T16:06:46+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export
+ERR: Merge must be set on a range of cells.
+
+[ 2016-05-08T16:18:16+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001182s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000889s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001007s ]
+
+[ 2016-05-08T16:19:20+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000668s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001117s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0039s ]
+SQL: SELECT student.name as stu_name,`sex`,`sid_num`,organ.name as sch_name,student.phone as phone,`pub_status`,`pub_release` FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  WHERE student.status = 0 AND `pub_junior` = 9 AND ( (civil_release=1 and civil_status=3) or (civil_release=0 and civil_status=0) or civil_junior=0 )  [ RunTime:0.0004s ]
+
+[ 2016-05-08T16:49:03+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html?type=3
+ERR: Invalid cell coordinate [2
+
+[ 2016-05-08T16:49:21+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_studnet_info_export.html?type=3
+ERR: Invalid cell coordinate [2
+

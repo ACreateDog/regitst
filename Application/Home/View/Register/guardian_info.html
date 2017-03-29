@@ -1,0 +1,96 @@
+<extend name="Base:base"/>
+
+<!--页面标题-->
+<block name="title">小升初::录取状态</block>
+<block name="link">
+    <link href="__PUBLIC__/assets/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="__PUBLIC__/Home/Register/css/guardian_info.css" rel="stylesheet" />
+</block>
+<!--面包屑导航-->
+<block name="breadcrumb">
+    <li class="active">{$type}</li>
+</block>
+
+<!--页面内容-->
+<block name="page-body">
+    <div id="type_id" style="height: 1000px;" type_id="{$type_id}">
+        <!--index-->
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="widget">
+                    <div class="widget-header">
+                        <span class="widget-caption">{$type}</span>
+                    </div>
+                    <div class="widget-body">
+                        <div class="btn-group">
+                            <a class="btn btn-default">
+                                <i class="fa fa-download"></i>
+                                下载
+                            </a>
+                        </div>
+                        <div class="mail-container" style="top: 12px;">
+                            <div class="mail-body" style="margin-left:0px;;">
+                                <ul class="mail-list">
+                                    <li class="list-item">
+                                        <div class="item-sender">
+                                            姓名：
+                                        </div>
+                                        <div class="item-subject">
+                                            赵明
+                                        </div>
+                                    </li>
+                                    <li class="list-item">
+                                        <div class="item-sender">
+                                            与学生的关系：
+                                        </div>
+                                        <div class="item-subject">
+                                            父子
+                                        </div>
+                                    </li>
+                                    <li class="list-item">
+                                        <div class="item-sender">
+                                            身份证号：
+                                        </div>
+                                        <div class="item-subject">
+                                            34567654334567654
+                                        </div>
+                                    </li>
+                                    <li class="list-item">
+                                        <div class="item-sender">
+                                            工作单位：
+                                        </div>
+                                        <div class="item-subject">
+                                            一个你不知道的公司
+                                        </div>
+                                    </li>
+                                    <li class="list-item">
+                                        <div class="item-sender">
+                                            职业：
+                                        </div>
+                                        <div class="item-subject">
+                                            职员
+                                        </div>
+                                    </li>
+                                    <li class="list-item">
+                                        <div class="item-sender">
+                                            手机号码：
+                                        </div>
+                                        <div class="item-subject">
+                                            34565432345
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" value="__URL__" id="url">
+
+</block>
+
+<block name="script">
+    <script src="__PUBLIC__/assets/js/skins.min.js"></script>
+</block>

@@ -1,0 +1,319 @@
+<extend name="Base:base" />
+<block name="css_link">
+    <link href="__PUBLIC__/admin/student/css/student.css" rel="stylesheet"/>
+</block>
+<block name="main">
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <div class="widget">
+                <div class="widget-header ">
+                    <span class="widget-caption">{$reminder}</span>
+                    <!--<div class="widget-buttons">-->
+                    <!--<a href="#" data-toggle="maximize">-->
+                    <!--<i class="fa fa-expand"></i>-->
+                    <!--</a>-->
+                    <!--<a href="#" data-toggle="collapse">-->
+                    <!--<i class="fa fa-minus"></i>-->
+                    <!--</a>-->
+                    <!--</div>-->
+                </div>
+                <div class="widget-body">
+                    <div class="col-lg-12 col-sm-12 col-xs-12">
+                        <div class="widget radius-bordered">
+                            <div class="widget-header bg-blue">
+                                <span class="widget-caption">学生基本信息</span>
+                            </div><!--Widget Header-->
+                            <div class="widget-body basis_info">
+                                <div class="fileupload-buttonbar tooltip-info" data-toggle="tooltip">
+                                    <div class="upload_img thumbnail col-sm-12">
+                                        <img id="photo_show" style="width:180px;height:180px;margin-top:10px;margin-bottom:8px;"  src="/register_system/Uploads/{$default}{$student_info['basis_info']['picture']}" data-holder-rendered="true">
+                                    </div>
+                                    <if condition="$student_info['basis_info']['oid'] eq session('oid')">
+                                        <div class="reset_pass">
+                                            <a href="javascript:void(0);" url="{:U('Register/reset_pass')}" sid_num="{$student_info['basis_info']['sid_num']}" id_num="{$student_info['basis_info']['id_num']}" class="reset_pass_btn btn btn-azure shiny">重置密码</a>
+                                        </div>
+                                    </if>
+                                </div>
+
+                                <div class="form_text form-group">
+                                    <label class="col-sm-1 control-label no-padding-right">学生姓名：</label>
+                                    <span class="col-sm-8 control-label">{$student_info['basis_info']['name']}</span>
+                                </div>
+
+                                <div class="form_text form-group">
+                                    <label class="col-sm-1 control-label no-padding-right">民族：</label>
+                                    <span class="col-sm-8 control-label">{$student_info['basis_info']['nation']}</span>
+                                </div>
+                                <div class="form_text form-group">
+                                    <label for="sex" id="sex" class="col-sm-1 control-label no-padding-right">性别：</label>
+                                    <span class="col-sm-8 control-label">
+                                        <if condition="$student_info['basis_info']['sex'] eq 0">
+                                            男
+                                            <else />
+                                            女
+                                        </if>
+                                    </span>
+                                </div>
+                                <div class="form_text form-group">
+                                    <label class="col-sm-1 control-label no-padding-right">生日：</label>
+                                    <span class="col-sm-8 control-label">{$student_info['basis_info']['birthday']|date='Y-m-d',###}</span>
+                                </div>
+                                <div class="form_text form-group">
+                                    <label for="origin" id="origin" data="{$student_info['basis_info']['origin']}" class="col-sm-1 control-label no-padding-right">生源类型：</label>
+                                    <span class="col-sm-8 control-label">
+                                        <if condition="$student_info['basis_info']['origin'] eq 0">
+                                            学区生
+                                            <else />
+                                            统筹生
+                                        </if>
+                                    </span>
+                                </div>
+                                <if condition="session('rank') neq 6">
+                                    <div class="form_text form-group">
+                                        <label id="original_school" data="{$student_info['basis_info']['origin']}" class="col-sm-1 control-label no-padding-right">原就读小学：</label>
+                                        <span class="col-sm-8 control-label">
+                                            <if condition="empty($student_info['basis_info']['school'])">
+                                                {$student_info['basis_info']['original_school']}
+                                                <else />
+                                                {$student_info['basis_info']['school']}
+                                            </if>
+                                        </span>
+                                    </div>
+                                </if>
+                                <if condition="$student_info['basis_info']['status'] neq 1">
+                                    <div class="form_text form-group">
+                                        <label class="col-sm-1 control-label no-padding-right">志愿学校（民办）：</label>
+                                        <span class="col-sm-8 control-label">{$student_info['volunteer']['civil_junior_name']}</span>
+                                    </div>
+                                    <div class="form_text form-group">
+                                        <label class="col-sm-1 control-label no-padding-right">志愿学校（公办）：</label>
+                                        <span class="col-sm-8 control-label">{$student_info['volunteer']['pub_junior_name']}</span>
+                                    </div>
+                                </if>
+                                <div class="form_text form-group">
+                                    <label class="col-sm-1 control-label no-padding-right">学生身份证号：</label>
+                                    <span class="col-sm-8 control-label">{$student_info['basis_info']['id_num']}</span>
+                                </div>
+                                <div class="form_text form-group">
+                                    <label class="col-sm-1 control-label no-padding-right">学生学籍号：</label>
+                                    <span class="col-sm-8 control-label">{$student_info['basis_info']['sid_num']}</span>
+                                </div>
+                                <div class="form_text form-group">
+                                    <label class="col-sm-1 control-label no-padding-right">户口所在地：</label>
+                                    <span class="col-sm-8 control-label">{$student_info['basis_info']['account']}</span>
+                                </div>
+                                <div class="form_text form-group">
+                                    <label class="col-sm-1 control-label no-padding-right">家庭住址：</label>
+                                    <span class="col-sm-8 control-label">{$student_info['basis_info']['address']}</span>
+                                </div>
+                                <div class="form_text form-group">
+                                    <label class="col-sm-1 control-label no-padding-right">手机号：</label>
+                                    <span class="col-sm-8 control-label">{$student_info['basis_info']['phone']}</span>
+                                </div>
+                                <div class="form_text form-group">
+                                    <label class="col-sm-1 control-label no-padding-right">邮箱：</label>
+                                    <span class="col-sm-8 control-label">{$student_info['basis_info']['email']}</span>
+                                </div>
+                            </div>
+                        </div><!--Widget Body-->
+                    </div><!--Widget-->
+                    <div class="col-lg-12 col-sm-12 col-xs-12">
+                        <div class="widget radius-bordered">
+                            <div class="widget-header bg-blue">
+                                <span class="widget-caption">房产信息</span>
+                            </div><!--Widget Header-->
+                            <div class="widget-body house_info">
+                                <div class="form_text form-group">
+                                    <label class="col-sm-1 control-label no-padding-right">房产证编号：</label>
+                                    <span class="col-sm-8 control-label">{$student_info['basis_info']['house']}</span>
+                                </div>
+                                <div class="form_text form-group">
+                                    <label class="col-sm-1 control-label no-padding-right">房产地址：</label>
+                                    <span class="col-sm-8 control-label">{$student_info['basis_info']['house_address']}</span>
+                                </div>
+                                <div class="form_text form-group">
+                                    <label class="col-sm-1 control-label no-padding-right">房产所有人及共有人：</label>
+                                    <span class="col-sm-8 control-label">{$student_info['basis_info']['house_owners']}</span>
+                                </div>
+                                <div class="form_text form-group">
+                                    <label class="col-sm-1 control-label no-padding-right">房产证户主与孩子关系：</label>
+                                    <span class="col-sm-8 control-label">{$student_info['basis_info']['house_relations']}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-sm-12 col-xs-12">
+                        <div class="widget radius-bordered">
+                            <div class="widget-header bg-blue">
+                                <span class="widget-caption">父母及监护人信息</span>
+                            </div><!--Widget Header-->
+                            <div class="widget-body duty_info">
+                                <notempty name="student_info['duty_info']['guardian_info']">
+                                    <div class="col-lg-12 col-sm-12 col-xs-12 guardian_info">
+                                        <div class="mother_father_duty widget radius-bordered">
+                                            <div class="widget-header">
+                                                <span class="widget-caption">监护人信息</span>
+                                                <if condition="$student_info['basis_info']['oid'] eq session('oid')">
+                                                    <div class="widget-buttons duty_info_header">
+                                                        <a href="javascript:void(0);" object="guardian_info" class="edit_duty_info btn btn-info btn-xs edit"><i class="fa fa-edit"></i> 编辑</a>
+                                                        <a href="javascript:void(0);" url="{:U('Register/save_duty_info')}" object="guardian_info" student="{$student_info['duty_info']['guardian_info']['id']}" style="display: none;" class="save_duty_info btn btn-success btn-xs save"><i class="fa fa-save"></i> 保存</a>
+                                                        <a href="javascript:void(0);" style="display: none;" object="guardian_info" class="btn btn-warning btn-xs cancel duty_info_cancel"><i class="fa fa-times"></i> 取消</a>
+                                                    </div>
+                                                </if>
+                                            </div>
+                                            <div class="widget-body">
+                                                <div class="form_text form-group">
+                                                    <label class="col-sm-1 control-label no-padding-right">监护人姓名：</label>
+                                                    <span name="name" class="col-sm-8 text control-label">{$student_info['duty_info']['guardian_info']['name']}</span>
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label class="col-sm-1 control-label no-padding-right">监护人关系：</label>
+                                                    <span name="relations" class="col-sm-8 text control-label">{$student_info['duty_info']['guardian_info']['relations']}</span>
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label class="col-sm-1 control-label no-padding-right">监护人身份证号码：</label>
+                                                    <span name="id_num" class="col-sm-8 text control-label">{$student_info['duty_info']['guardian_info']['id_num']}</span>
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label class="col-sm-1 control-label no-padding-right">监护人单位：</label>
+                                                    <span name="workunit" class="col-sm-8 text control-label">{$student_info['duty_info']['guardian_info']['workunit']}</span>
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label class="col-sm-1 control-label no-padding-right">监护人职业：	</label>
+                                                    <span name="occupation" class="col-sm-8 text control-label">{$student_info['duty_info']['guardian_info']['occupation']}</span>
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label class="col-sm-1 control-label no-padding-right">监护人联系手机：</label>
+                                                    <span name="phone" class="col-sm-8 text control-label">{$student_info['duty_info']['guardian_info']['phone']}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </notempty>
+
+                                <notempty name="student_info['duty_info']['father_info']">
+                                    <div class="col-lg-12 col-sm-12 col-xs-12 father_info">
+                                        <div class="mother_father_duty widget radius-bordered">
+                                            <div class="widget-header">
+                                                <span class="widget-caption">父亲信息</span>
+                                                <if condition="$student_info['basis_info']['oid'] eq session('oid')">
+                                                    <div class="widget-buttons duty_info_header">
+                                                        <a href="javascript:void(0);" object="father_info" class="edit_duty_info btn btn-info btn-xs edit"><i class="fa fa-edit"></i> 编辑</a>
+                                                        <a href="javascript:void(0);" url="{:U('Register/save_duty_info')}" object="father_info" student="{$student_info['duty_info']['father_info']['id']}" style="display: none;" class="save_duty_info btn btn-success btn-xs save"><i class="fa fa-save"></i> 保存</a>
+                                                        <a href="javascript:void(0);" style="display: none;" object="father_info" class="btn btn-warning btn-xs cancel duty_info_cancel"><i class="fa fa-times"></i> 取消</a>
+                                                    </div>
+                                                </if>
+                                            </div>
+                                            <div class="widget-body">
+                                                <div class="form_text form-group">
+                                                    <label class="col-sm-1 control-label no-padding-right">监护人姓名：</label>
+                                                    <span name="name" class="col-sm-8 text control-label">{$student_info['duty_info']['father_info']['name']}</span>
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label class="col-sm-1 control-label no-padding-right">监护人身份证号码：</label>
+                                                    <span name="id_num" class="col-sm-8 text control-label">{$student_info['duty_info']['father_info']['id_num']}</span>
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label class="col-sm-1 control-label no-padding-right">监护人单位：</label>
+                                                    <span name="workunit" class="col-sm-8 text control-label">{$student_info['duty_info']['father_info']['workunit']}</span>
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label class="col-sm-1 control-label no-padding-right">监护人职业：	</label>
+                                                    <span name="occupation" class="col-sm-8 text control-label">{$student_info['duty_info']['father_info']['occupation']}</span>
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label class="col-sm-1 control-label no-padding-right">监护人联系手机：</label>
+                                                    <span name="phone" class="col-sm-8 text control-label">{$student_info['duty_info']['father_info']['phone']}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </notempty>
+
+                                <notempty name="student_info['duty_info']['mother_info']">
+                                    <div class="col-lg-12 col-sm-12 col-xs-12 mother_info">
+                                        <div class="mother_father_duty widget radius-bordered">
+                                            <div class="widget-header">
+                                                <span class="widget-caption">母亲信息</span>
+                                                <if condition="$student_info['basis_info']['oid'] eq session('oid')">
+                                                    <div class="widget-buttons duty_info_header">
+                                                        <a href="javascript:void(0);" object="mother_info" class="edit_duty_info btn btn-info btn-xs edit"><i class="fa fa-edit"></i> 编辑</a>
+                                                        <a href="javascript:void(0);" url="{:U('Register/save_duty_info')}" object="mother_info" student="{$student_info['duty_info']['mother_info']['id']}" style="display: none;" class="save_duty_info btn btn-success btn-xs save"><i class="fa fa-save"></i> 保存</a>
+                                                        <a href="javascript:void(0);" style="display: none;" object="mother_info" class="btn btn-warning btn-xs cancel duty_info_cancel"><i class="fa fa-times"></i> 取消</a>
+                                                    </div>
+                                                </if>
+                                            </div>
+                                            <div class="widget-body">
+                                                <div class="form_text form-group">
+                                                    <label class="col-sm-1 control-label no-padding-right">监护人姓名：</label>
+                                                    <span name="name" class="col-sm-8 text control-label">{$student_info['duty_info']['mother_info']['name']}</span>
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label class="col-sm-1 control-label no-padding-right">监护人身份证号码：</label>
+                                                    <span name="id_num" class="col-sm-8 text control-label">{$student_info['duty_info']['mother_info']['id_num']}</span>
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label class="col-sm-1 control-label no-padding-right">监护人单位：</label>
+                                                    <span name="workunit" class="col-sm-8 text control-label">{$student_info['duty_info']['mother_info']['workunit']}</span>
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label class="col-sm-1 control-label no-padding-right">监护人职业：	</label>
+                                                    <span name="occupation" class="col-sm-8 text control-label">{$student_info['duty_info']['mother_info']['occupation']}</span>
+                                                </div>
+                                                <div class="form_text form-group">
+                                                    <label class="col-sm-1 control-label no-padding-right">监护人联系手机：</label>
+                                                    <span name="phone" class="col-sm-8 text control-label">{$student_info['duty_info']['mother_info']['phone']}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </notempty>
+                            </div>
+                        </div>
+                    </div>
+                    <if condition="$student_info['basis_info']['status'] eq 1">
+                        <div class="col-lg-12 col-sm-12 col-xs-12">
+                            <div class="widget radius-bordered">
+                                <div class="widget-header bg-blue">
+                                    <span class="widget-caption">录取详情</span>
+                                </div><!--Widget Header-->
+                                <div class="widget-body enroll_info">
+                                    <table class="table_data table table-striped table-hover table-bordered" id="student_info">
+                                        <thead>
+                                        <tr role="row">
+                                            <th>序号</th>
+                                            <th>学校</th>
+                                            <th>公/民(办)</th>
+                                            <th>状态</th>
+                                            <th>备注</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody class="data_user">
+                                        <foreach name="enroll_info" key="k" item="vo">
+                                            <tr>
+                                                <td>{$k+1}</td>
+                                                <td>{$vo.school}</td>
+                                                <td>{$vo.type}</td>
+                                                <td>{$vo.status}</td>
+                                                <td>{$vo.remark}</td>
+                                            </tr>
+                                        </foreach>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </if>
+                    <if condition="$student_info['basis_info']['status'] neq 1 and $student_info['basis_info']['oid'] eq session('oid')">
+                        <a href='{:U("Register/save_student_info?student_id=$student")}' class="edit btn btn-azure shiny">编辑</a>
+                        <a href="javascript:void(0);" to-url="{:U('Register/student_info')}" url="{:U('Register/submit_info')}" student="{$student}" class="submit btn btn-azure shiny">提交</a>
+                    </if>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js_link">
+    <script src="__PUBLIC__/assets/js/bootbox/bootbox.js"></script>
+    <script src="__PUBLIC__/admin/student/js/student.js"></script>
+</block>

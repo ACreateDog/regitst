@@ -1,0 +1,216 @@
+<extend name="Base:base"/>
+
+<!--页面标题-->
+<block name="title">小升初::录取状态</block>
+<block name="link">
+    <link href="__PUBLIC__/assets/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="__PUBLIC__/Home/Register/css/register.css" rel="stylesheet" />
+</block>
+<!--面包屑导航-->
+<block name="breadcrumb">
+    <li class="active">{$type}</li>
+</block>
+
+<!--页面内容-->
+<block name="page-body">
+    <div id="type_id" style="height: auto;" type_id="{$type_id}">
+        <!--index-->
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="widget">
+                    <div class="widget-header">
+                        <span class="widget-caption">{$type}</span>
+                    </div>
+                    <div class="widget-body">
+                        <if condition="$studentInfo eq 0">
+                            <div class="btn-group">
+                                <a class="btn btn-default" disabled="true">
+                                    <i class="fa fa-download"></i>
+                                    下载
+                                </a>
+                            </div>
+                            <else />
+                            <div class="btn-group">
+                                <a class="btn btn-default" href="{:U('Register/get_export_data_register')}">
+                                    <i class="fa fa-download"></i>
+                                    下载
+                                </a>
+                            </div>
+                        </if>
+                        <if condition="$studentInfo eq 0">
+                            <div class="prompt-text">
+                                <p>当前招生信息还未公布，请等待...</p>
+                            </div>
+                            <elseif condition="$studentInfo[0]['status'] eq '0'" />
+                            <div class="prompt-text">
+                                <p>教师未提交信息</p>
+                            </div>
+                            <else />
+                            <div class="prompt-text">
+                                <p>教师已提交信息</p>
+                            </div>
+                        </if>
+                        <div class="mail-container" style="top: 12px;">
+                            <div class="mail-body" style="margin-left:0px;">
+                                <ul class="mail-list">
+                                    <if condition="$studentInfo eq 0">
+                                        <li class="list-item">
+                                            <div class="item-sender" style="width: 30%;">
+                                                当前招生信息还未公布，请等待...
+                                            </div>
+                                        </li>
+                                        <else />
+                                            <!--<li class="list-item">
+                                                <div class="item-sender" style="font-size: 20px;color: royalblue;">
+                                                    公办学校
+                                                </div>
+                                            </li>
+                                            <li class="list-item">
+                                                <div class="item-sender">
+                                                    报考学校：
+                                                </div>
+                                                <div class="item-subject">
+                                                    {$studentInfo[0]['pub_junior']}
+                                                </div>
+                                            </li>
+                                            <li class="list-item">
+                                                <div class="item-sender">
+                                                    录取状态：
+                                                </div>
+                                                <div class="item-subject">
+                                                    {$studentInfo[0]['pub_status']}
+                                                </div>
+                                            </li>
+                                            <li class="list-item">
+                                                <div class="item-sender">
+
+                                                </div>
+                                            </li>
+                                            <li class="list-item">
+                                                <div class="item-sender" style="font-size: 20px;color: royalblue;">
+                                                    民办学校
+                                                </div>
+                                            </li>
+                                            <li class="list-item">
+                                                <div class="item-sender">
+                                                    报考学校：
+                                                </div>
+                                                <div class="item-subject">
+                                                    {$studentInfo[0]['civil_junior']}
+                                                </div>
+                                            </li>
+                                            <li class="list-item">
+                                                <div class="item-sender">
+                                                    录取状态：
+                                                </div>
+                                                <div class="item-subject">
+                                                    {$studentInfo[0]['civil_status']}
+                                                </div>
+                                            </li>-->
+                                        <table class="table table-hover">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="font-size: 20px;color: royalblue;">公办学校</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>报考学校：</td>
+                                                    <td>{$studentInfo[0]['pub_junior']}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>录取状态：</td>
+                                                    <td>{$studentInfo[0]['pub_status']}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-size: 20px;color: royalblue;">民办学校</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>报考学校：</td>
+                                                    <td>{$studentInfo[0]['civil_junior']}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>录取状态：</td>
+                                                    <td>{$studentInfo[0]['civil_status']}</td>
+                                                </tr>
+                                                <!--显示分配状态-->
+                                                <if condition="$studentInfo[0]['pub_state'] eq '2'" >
+                                                    <tr>
+                                                        <td style="font-size: 20px;color: royalblue;">分配情况</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>分配状态：</td>
+                                                        <td>{$studentInfo[0]['state']}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>被分配到学校：</td>
+                                                        <td>{$studentInfo[0]['organ_name']}</td>
+                                                    </tr>
+                                                </if>
+                                            </tbody>
+                                        </table>
+                                    </if>
+                                    <!--<li class="list-item">
+                                        <div class="item-sender" style="font-size: 20px;color: royalblue;">
+                                            公办学校
+                                        </div>
+                                    </li>
+                                    <li class="list-item">
+                                        <div class="item-sender">
+                                            报考学校：
+                                        </div>
+                                        <div class="item-subject">
+                                            新乡市第一中学
+                                        </div>
+                                    </li>
+                                    <li class="list-item">
+                                        <div class="item-sender">
+                                            录取状态：
+                                        </div>
+                                        <div class="item-subject">
+                                            已录取
+                                        </div>
+                                    </li>
+                                    <li class="list-item">
+                                        <div class="item-sender">
+
+                                        </div>
+                                    </li>
+                                    <li class="list-item">
+                                        <div class="item-sender" style="font-size: 20px;color: royalblue;">
+                                            民办学校
+                                        </div>
+                                    </li>
+                                    <li class="list-item">
+                                        <div class="item-sender">
+                                            报考学校：
+                                        </div>
+                                        <div class="item-subject">
+                                            民办第一中学
+                                        </div>
+                                    </li>
+                                    <li class="list-item">
+                                        <div class="item-sender">
+                                            录取状态：
+                                        </div>
+                                        <div class="item-subject">
+                                            未录取
+                                        </div>
+                                    </li>-->
+                                </ul>
+                                <div style="height: 12px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" value="__URL__" id="url">
+
+</block>
+
+<block name="script">
+    <script src="__PUBLIC__/assets/js/skins.min.js"></script>
+</block>

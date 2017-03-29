@@ -1,0 +1,606 @@
+[ 2016-05-07T08:47:47+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_admis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000543s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000999s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0258s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0041s ]
+SQL: UPDATE `register` SET `pub_status`='1' WHERE `id` IN ('12') AND `pub_junior` = 9 [ RunTime:0.0905s ]
+
+[ 2016-05-07T08:47:51+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_issued_admis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000643s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001170s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0041s ]
+SQL: UPDATE `register` SET `pub_release`='1' WHERE `pub_junior` = 9 AND `pub_status` IN ('1','2') [ RunTime:0.0651s ]
+
+[ 2016-05-07T10:30:25+08:00 ] ::1 /register_system/index.php/Admin/Login/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002139s ]
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-05-07T10:30:28+08:00 ] ::1 /register_system/index.php/Admin/Login/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001024s ]
+
+[ 2016-05-07T10:30:29+08:00 ] ::1 /register_system/index.php/Admin/Login/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000564s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001218s ]
+
+[ 2016-05-07T10:30:32+08:00 ] ::1 /register_system/index.php/Admin/Login/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000679s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001158s ]
+
+[ 2016-05-07T10:36:36+08:00 ] ::1 /register_system/index.php/Admin/Login/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001082s ]
+
+[ 2016-05-07T10:36:48+08:00 ] ::1 /register_system/index.php/Admin/Login/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001011s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002169s ]
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-05-07T10:36:52+08:00 ] ::1 /register_system/index.php/Admin/Login/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001165s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002044s ]
+
+[ 2016-05-07T10:37:01+08:00 ] ::1 /register_system/index.php/Admin/Login/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000922s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001380s ]
+
+[ 2016-05-07T10:46:30+08:00 ] ::1 /register_system/index.php/Admin/Index/index.html
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-05-07T10:58:29+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_admis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000773s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001259s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0396s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0041s ]
+SQL: UPDATE `register` SET `pub_status`='1' WHERE `id` IN ('1','2','3','4','5','6','7','8','9','11') AND `pub_junior` = 9 [ RunTime:0.0586s ]
+
+[ 2016-05-07T11:11:52+08:00 ] ::1 /register_system/index.php/Admin/Enter/lotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000764s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001348s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0040s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+
+[ 2016-05-07T11:11:55+08:00 ] ::1 /register_system/index.php/Admin/Enter/lotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000924s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0221s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0040s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+
+[ 2016-05-07T11:12:35+08:00 ] ::1 /register_system/index.php/Admin/Enter/lotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001541s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0142s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0040s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+
+[ 2016-05-07T11:13:40+08:00 ] ::1 /register_system/index.php/Admin/Enter/NlotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000585s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001068s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0043s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='3' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='3' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+
+[ 2016-05-07T11:13:42+08:00 ] ::1 /register_system/index.php/Admin/Enter/NlotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000532s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000966s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0042s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='3' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='3' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+
+[ 2016-05-07T11:13:43+08:00 ] ::1 /register_system/index.php/Admin/Enter/NlotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001016s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0039s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='3' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='3' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+
+[ 2016-05-07T11:13:43+08:00 ] ::1 /register_system/index.php/Admin/Enter/NlotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001133s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0040s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='3' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='3' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+
+[ 2016-05-07T11:13:57+08:00 ] ::1 /register_system/index.php/Admin/Enter/lotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000895s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001596s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0066s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0051s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('1') AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('1') AND student.status = 0
+
+[ 2016-05-07T11:13:59+08:00 ] ::1 /register_system/index.php/Admin/Enter/lotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001022s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0038s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('1') AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('1') AND student.status = 0
+
+[ 2016-05-07T11:13:59+08:00 ] ::1 /register_system/index.php/Admin/Enter/NlotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000550s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000947s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0054s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='3' WHERE `civil_junior` = 12 AND `id` IN ('1') AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='3' WHERE `civil_junior` = 12 AND `id` IN ('1') AND student.status = 0
+
+[ 2016-05-07T11:15:16+08:00 ] ::1 /register_system/index.php/Admin/Enter/lotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000635s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001121s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0409s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0044s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+
+[ 2016-05-07T11:16:28+08:00 ] ::1 /register_system/index.php/Admin/Enter/lotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000533s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001002s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0041s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+
+[ 2016-05-07T11:16:48+08:00 ] ::1 /register_system/index.php/Admin/Enter/cilil_issued_lot.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000561s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001080s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0164s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0039s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `lot_release`='1' WHERE `civil_junior` = 12 AND `civil_status` = 1 AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `lot_release`='1' WHERE `civil_junior` = 12 AND `civil_status` = 1 AND student.status = 0
+
+[ 2016-05-07T11:16:49+08:00 ] ::1 /register_system/index.php/Admin/Enter/cilil_issued_lot.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001002s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0042s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `lot_release`='1' WHERE `civil_junior` = 12 AND `civil_status` = 1 AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `lot_release`='1' WHERE `civil_junior` = 12 AND `civil_status` = 1 AND student.status = 0
+
+[ 2016-05-07T11:16:50+08:00 ] ::1 /register_system/index.php/Admin/Enter/cilil_issued_lot.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000529s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000990s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0038s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `lot_release`='1' WHERE `civil_junior` = 12 AND `civil_status` = 1 AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `lot_release`='1' WHERE `civil_junior` = 12 AND `civil_status` = 1 AND student.status = 0
+
+[ 2016-05-07T11:16:56+08:00 ] ::1 /register_system/index.php/Admin/Enter/NlotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000989s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0414s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0038s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='3' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='3' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+
+[ 2016-05-07T11:16:57+08:00 ] ::1 /register_system/index.php/Admin/Enter/NlotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000539s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000971s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0037s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='3' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='3' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+
+[ 2016-05-07T11:16:58+08:00 ] ::1 /register_system/index.php/Admin/Enter/NlotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000532s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000958s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0044s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='3' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='3' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+
+[ 2016-05-07T11:17:41+08:00 ] ::1 /register_system/index.php/Admin/Enter/lotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000689s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001183s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0039s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10','11','12','13') AND student.status = 0
+
+[ 2016-05-07T11:17:44+08:00 ] ::1 /register_system/index.php/Admin/Enter/lotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000963s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001802s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0325s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0040s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('7') AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('7') AND student.status = 0
+
+[ 2016-05-07T11:17:45+08:00 ] ::1 /register_system/index.php/Admin/Enter/lotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001320s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0101s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0038s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('3') AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('3') AND student.status = 0
+
+[ 2016-05-07T11:17:46+08:00 ] ::1 /register_system/index.php/Admin/Enter/NlotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000604s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001176s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0043s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='3' WHERE `civil_junior` = 12 AND `id` IN ('3') AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `civil_status`='3' WHERE `civil_junior` = 12 AND `id` IN ('3') AND student.status = 0
+
+[ 2016-05-07T11:18:26+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_admis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000532s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000947s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0039s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `pub_status`='1' WHERE `id` IN ('1','3','5','7','8','9','11','12','14','15') AND `pub_junior` = 9 AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `pub_status`='1' WHERE `id` IN ('1','3','5','7','8','9','11','12','14','15') AND `pub_junior` = 9 AND student.status = 0
+
+[ 2016-05-07T11:18:30+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_admis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000835s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001404s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0048s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `pub_status`='1' WHERE `id` IN ('1') AND `pub_junior` = 9 AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `pub_status`='1' WHERE `id` IN ('1') AND `pub_junior` = 9 AND student.status = 0
+
+[ 2016-05-07T11:18:31+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_admis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000906s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001615s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0056s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `pub_status`='1' WHERE `id` IN ('3') AND `pub_junior` = 9 AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `pub_status`='1' WHERE `id` IN ('3') AND `pub_junior` = 9 AND student.status = 0
+
+[ 2016-05-07T11:18:33+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_admis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000634s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001265s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0134s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0056s ]
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `pub_status`='1' WHERE `id` IN ('15') AND `pub_junior` = 9 AND student.status = 0
+ERR: 1054:Unknown column 'student.status' in 'where clause'
+ [ SQL语句 ] : UPDATE `register` SET `pub_status`='1' WHERE `id` IN ('15') AND `pub_junior` = 9 AND student.status = 0
+
+[ 2016-05-07T11:26:57+08:00 ] ::1 /register_system/index.php/Admin/Enter/lotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000563s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000983s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0037s ]
+SQL: UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('1','2','3','4','5','6','7','8','9','10') [ RunTime:0.0750s ]
+
+[ 2016-05-07T11:27:02+08:00 ] ::1 /register_system/index.php/Admin/Enter/NlotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001263s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0212s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0037s ]
+SQL: UPDATE `register` SET `civil_status`='3' WHERE `civil_junior` = 12 AND `id` IN ('1','2','3','4','5','6','7','8','9','10') [ RunTime:0.0439s ]
+
+[ 2016-05-07T11:27:19+08:00 ] ::1 /register_system/index.php/Admin/Enter/cilil_issued_lot.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001094s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001501s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0326s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0038s ]
+SQL: UPDATE `register` SET `lot_release`='1' WHERE `civil_junior` = 12 AND `civil_status` = 1 [ RunTime:0.0003s ]
+SQL: UPDATE `register` SET `lot_release`='1',`civil_release`='1' WHERE `civil_junior` = 12 AND `civil_status` = 3 [ RunTime:0.0003s ]
+
+[ 2016-05-07T11:33:45+08:00 ] ::1 /register_system/index.php/Admin/Enter/lotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000687s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001142s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0294s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0052s ]
+SQL: UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('11','12','13') [ RunTime:0.0382s ]
+
+[ 2016-05-07T11:33:48+08:00 ] ::1 /register_system/index.php/Admin/Enter/cilil_issued_lot.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000671s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001117s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0054s ]
+SQL: UPDATE `register` SET `lot_release`='1' WHERE `civil_junior` = 12 AND `civil_status` = 1 [ RunTime:0.0006s ]
+SQL: UPDATE `register` SET `lot_release`='1',`civil_release`='1' WHERE `civil_junior` = 12 AND `civil_status` = 3 [ RunTime:0.0003s ]
+
+[ 2016-05-07T11:33:58+08:00 ] ::1 /register_system/index.php/Admin/Enter/civil_admis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000622s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001082s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0162s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0040s ]
+SQL: UPDATE `register` SET `civil_status`='2' WHERE `id` IN ('11','12','13') AND `civil_junior` = 12 [ RunTime:0.0450s ]
+
+[ 2016-05-07T11:34:01+08:00 ] ::1 /register_system/index.php/Admin/Enter/civil_issued_admis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001136s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0884s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0312s ]
+SQL: UPDATE `register` SET `civil_release`='1' WHERE `civil_junior` = 12 AND `civil_status` IN ('2','3') [ RunTime:0.0526s ]
+
+[ 2016-05-07T11:36:39+08:00 ] ::1 /register_system/index.php/Admin/Enter/lotNum.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000532s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000959s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0127s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0038s ]
+SQL: UPDATE `register` SET `civil_status`='1' WHERE `civil_junior` = 12 AND `id` IN ('1','3','5','7','8','9','10') [ RunTime:0.0572s ]
+
+[ 2016-05-07T11:37:32+08:00 ] ::1 /register_system/index.php/Admin/Enter/cilil_issued_lot.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001128s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0239s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0042s ]
+SQL: UPDATE `register` SET `lot_release`='1' WHERE `civil_junior` = 12 AND `civil_status` = 1 [ RunTime:0.0003s ]
+SQL: UPDATE `register` SET `lot_release`='1',`civil_release`='1' WHERE `civil_junior` = 12 AND `civil_status` = 3 [ RunTime:0.0002s ]
+
+[ 2016-05-07T11:40:01+08:00 ] ::1 /register_system/index.php/Admin/Enter/civil_admis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000703s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001160s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0125s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0036s ]
+SQL: UPDATE `register` SET `civil_status`='2' WHERE `id` IN ('1','3','5','7','8','9','10') AND `civil_junior` = 12 [ RunTime:0.1086s ]
+
+[ 2016-05-07T11:40:30+08:00 ] ::1 /register_system/index.php/Admin/Enter/civil_issued_admis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001136s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0224s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0038s ]
+SQL: UPDATE `register` SET `civil_release`='1' WHERE `civil_junior` = 12 AND `civil_status` IN ('2','3') [ RunTime:0.0553s ]
+
+[ 2016-05-07T15:05:10+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubfail.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and civil_release=1 and civil_status=3) or (civil_release=0 and civil_status=0) ' at line 1
+ [ SQL语句 ] : SELECT register.id as register_id,student.name as stu_name,`sex`,`sid_num`,organ.name as sch_name,`account`,student.phone as phone,`pub_status` FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  WHERE student.status = 0 AND `pub_release` = 0 AND `pub_junior` = 9 AND ( (and civil_release=1 and civil_status=3) or (civil_release=0 and civil_status=0) or civil_junior=0 ) 
+
+[ 2016-05-07T15:05:18+08:00 ] ::1 /register_system/index.php/Admin/Enter/pubfail.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and civil_release=1 and civil_status=3) or (civil_release=0 and civil_status=0) ' at line 1
+ [ SQL语句 ] : SELECT register.id as register_id,student.name as stu_name,`sex`,`sid_num`,organ.name as sch_name,`account`,student.phone as phone,`pub_status` FROM `student` INNER JOIN register on student.id = register.sid INNER JOIN organ on student.oid = organ.id  WHERE student.status = 0 AND `pub_release` = 0 AND `pub_junior` = 9 AND ( (and civil_release=1 and civil_status=3) or (civil_release=0 and civil_status=0) or (pub_junior=9 and civil_junior=0) ) 
+
+[ 2016-05-07T15:12:58+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_Nadmis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000979s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0038s ]
+SQL: UPDATE `register` SET `pub_status`='2' WHERE `pub_junior` = 9 AND `id` IN ('9') [ RunTime:0.0739s ]
+
+[ 2016-05-07T15:13:06+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_admis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000535s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000955s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0107s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0039s ]
+SQL: UPDATE `register` SET `pub_status`='1' WHERE `id` IN ('3') AND `pub_junior` = 9 [ RunTime:0.0632s ]
+
+[ 2016-05-07T15:13:10+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_issued_admis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000632s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001124s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0128s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0042s ]
+SQL: UPDATE `register` SET `pub_release`='1' WHERE `pub_junior` = 9 AND `pub_status` IN ('1','2') [ RunTime:0.0696s ]
+
+[ 2016-05-07T15:13:24+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_Nadmis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001164s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0039s ]
+SQL: UPDATE `register` SET `pub_status`='2' WHERE `pub_junior` = 9 AND `id` IN ('1','5','7','8','11','12','15') [ RunTime:0.0756s ]
+
+[ 2016-05-07T15:13:27+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_admis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001028s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0218s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0037s ]
+SQL: UPDATE `register` SET `pub_status`='1' WHERE `id` IN ('7') AND `pub_junior` = 9 [ RunTime:0.0678s ]
+
+[ 2016-05-07T15:13:31+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_Nadmis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000525s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000946s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0794s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0037s ]
+SQL: UPDATE `register` SET `pub_status`='2' WHERE `pub_junior` = 9 AND `id` IN ('7') [ RunTime:0.0393s ]
+
+[ 2016-05-07T15:13:40+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_admis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000634s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001123s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0200s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0036s ]
+SQL: UPDATE `register` SET `pub_status`='1' WHERE `id` IN ('7') AND `pub_junior` = 9 [ RunTime:0.0576s ]
+
+[ 2016-05-07T15:13:42+08:00 ] ::1 /register_system/index.php/Admin/Enter/pub_issued_admis.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001040s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0039s ]
+SQL: UPDATE `register` SET `pub_release`='1' WHERE `pub_junior` = 9 AND `pub_status` IN ('1','2') [ RunTime:0.0586s ]
+
+[ 2016-05-07T20:38:15+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilreginfo.html
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-05-07T20:38:37+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilreginfo.html
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-05-07T20:38:38+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilreginfo.html
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-05-07T20:38:39+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilreginfo.html
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-05-07T20:38:54+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilreginfo.html
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-05-07T20:38:54+08:00 ] ::1 /register_system/index.php/Admin/Enter/civilreginfo.html
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-05-07T20:42:42+08:00 ] ::1 /register_system/index.php/Admin/Enter/cilil_issued_lot.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000705s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001149s ]
+SQL: SHOW COLUMNS FROM `setting` [ RunTime:0.0389s ]
+SQL: SELECT * FROM `setting` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.0039s ]
+SQL: UPDATE `register` SET `lot_release`='1' WHERE `civil_junior` = 12 AND `civil_status` = 1 [ RunTime:0.0287s ]
+SQL: UPDATE `register` SET `lot_release`='1',`civil_release`='1' WHERE `civil_junior` = 12 AND `civil_status` = 3 [ RunTime:0.0003s ]
+
+[ 2016-05-07T20:42:48+08:00 ] ::1 /register_system/index.php/Admin/ExportExel/get_exel.html
+ERR: 无法加载控制器:ExportExel
+
+[ 2016-05-07T21:53:18+08:00 ] ::1 /register_system/index.php/Admin/ExportExel/get_exel.html
+ERR: 无法加载控制器:ExportExel
+
+[ 2016-05-07T21:53:24+08:00 ] ::1 /register_system/index.php/Admin/ExportExel/get_exel.html
+ERR: 无法加载控制器:ExportExel
+
+[ 2016-05-07T21:53:57+08:00 ] ::1 /register_system/index.php/Admin/Enter/studnet_info_export.html
+ERR: 非法操作:studnet_info_export
+

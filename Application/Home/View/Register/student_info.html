@@ -1,0 +1,314 @@
+<extend name="Base:base"/>
+
+<!--页面标题-->
+<block name="title">小升初::学生信息</block>
+<block name="link">
+    <link href="__PUBLIC__/assets/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="__PUBLIC__/Home/Register/css/student_info.css" rel="stylesheet" />
+</block>
+<!--面包屑导航-->
+<block name="breadcrumb">
+    <li class="active">{$type}</li>
+</block>
+
+<!--页面内容-->
+<block name="page-body">
+    <div id="type_id" style="height: auto;" type_id="{$type_id}">
+        <!--index-->
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="widget">
+                    <div class="widget-header">
+                        <span class="widget-caption">{$type}</span>
+                    </div>
+                    <div class="widget-body">
+                        <if condition="$student_info eq 0">
+
+                        </if>
+                        <div class="btn-group">
+                            <a class="btn btn-default" href="{:U('Register/get_export_data_student')}">
+                                <i class="fa fa-download"></i>
+                                下载
+                            </a>
+                        </div>
+                        <div class="mail-container" style="top:12px;">
+                            <if condition="$student_info eq 0">
+                                <div class="mail-body">
+                                    <ul class="mail-list">
+                                        <li class="list-item">
+                                            <div class="item-sender" style="width: 30%;">
+                                                当前招生信息还未公布，请等待...
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div style="height: 12px;"></div>
+                                </div>
+                            <else />
+                                <div class="mail-body">
+                                    <ul class="mail-list">
+                                        <!--<li class="list-item">
+                                            <div class="item-sender">
+                                                学生姓名：
+                                            </div>
+                                            <div class="item-subject">
+                                                {$student_info['0']['name']}
+                                            </div>
+                                        </li>
+                                        <li class="list-item">
+                                            <div class="item-sender">
+                                                学生性别：
+                                            </div>
+                                            <div class="item-subject">
+                                                {$student_info['0']['sex']}
+                                            </div>
+                                        </li>
+                                        <li class="list-item">
+                                            <div class="item-sender">
+                                                出生日期：
+                                            </div>
+                                            <div class="item-subject">
+                                                &lt;!&ndash;{echo date('Y年m月d日', strtotime($student_info['0']['birthday']))}&ndash;&gt;
+                                                <php>echo date("Y年m月d日",strtotime($student_info['0']['birthday']))</php>
+                                            </div>
+                                        </li>
+                                        <li class="list-item">
+                                            <div class="item-sender">
+                                                原就读学校：
+                                            </div>
+                                            <div class="item-subject">
+                                                {$student_info['0']['organname']}
+                                            </div>
+                                        </li>
+                                        <li class="list-item">
+                                            <div class="item-sender">
+                                                学生身份证：
+                                            </div>
+                                            <div class="item-subject">
+                                                {$student_info['0']['id_num']}
+                                            </div>
+                                        </li>
+                                        <li class="list-item">
+                                            <div class="item-sender">
+                                                学生学籍号：
+                                            </div>
+                                            <div class="item-subject">
+                                                {$student_info['0']['sid_num']}
+                                            </div>
+                                        </li>
+                                        <li class="list-item">
+                                            <div class="item-sender">
+                                                民族：
+                                            </div>
+                                            <div class="item-subject">
+                                                {$student_info['0']['nation']}
+                                            </div>
+                                        </li>
+                                        <li class="list-item">
+                                            <div class="item-sender">
+                                                户口所在地：
+                                            </div>
+                                            <div class="item-subject">
+                                                {$student_info['0']['account']}
+                                            </div>
+                                        </li>
+                                        <li class="list-item">
+                                            <div class="item-sender">
+                                                家庭住址：
+                                            </div>
+                                            <div class="item-subject">
+                                                {$student_info['0']['address']}
+                                            </div>
+                                        </li>
+                                        <li class="list-item">
+                                            <div class="item-sender">
+                                                电话：
+                                            </div>
+                                            <div class="item-subject">
+                                                {$student_info['0']['phone']}
+                                            </div>
+                                        </li>
+                                        <li class="list-item">
+                                            <div class="item-sender">
+                                                邮箱：
+                                            </div>
+                                            <div class="item-subject">
+                                                {$student_info['0']['email']}
+                                            </div>
+                                        </li>
+                                        <li class="list-item">
+                                            <div class="item-sender">
+                                                生源类型：
+                                            </div>
+                                            <div class="item-subject">
+                                                {$student_info['0']['origin']}
+                                            </div>
+                                        </li>
+                                        <li class="list-item">
+                                            <div class="item-sender">
+                                                房产证编号：
+                                            </div>
+                                            <div class="item-subject">
+                                                {$student_info['0']['hous']}
+                                            </div>
+                                        </li>
+                                        <li class="list-item">
+                                            <div class="item-sender">
+                                                房产地址：
+                                            </div>
+                                            <div class="item-subject">
+                                                {$student_info['0']['hous_address']}
+                                            </div>
+                                        </li>
+                                        <li class="list-item">
+                                            <div class="item-sender">
+                                                房产所有人及共有人：
+                                            </div>
+                                            <div class="item-subject">
+                                                {$student_info['0']['hours_owners']}
+                                            </div>
+                                        </li>
+                                        <li class="list-item">
+                                            <div class="item-sender">
+                                                房产证户主与孩子关系：
+                                            </div>
+                                            <div class="item-subject">
+                                                {$student_info['0']['hours_relations']}
+                                            </div>
+                                        </li>-->
+                                        <table class="table table-hover">
+                                            <tbody>
+                                                <tr>
+                                                    <td>学生姓名：</td>
+                                                    <if condition="$student_info['0']['name'] eq ''" >
+                                                        <td>无</td>
+                                                        <else /><td>{$student_info['0']['name']}</td>
+                                                    </if>
+                                                </tr>
+                                                <tr>
+                                                    <td>性别：</td>
+                                                    <if condition="$student_info['0']['sex'] eq ''" >
+                                                        <td>无</td>
+                                                        <else /><td>{$student_info['0']['sex']}</td>
+                                                    </if>
+                                                </tr>
+                                                <tr>
+                                                    <td>出生日期：</td>
+                                                    <if condition="$student_info['0']['birthday'] eq ''" >
+                                                        <td>无</td>
+                                                        <else /><td>
+                                                        <php>echo date("Y年m月d日",$student_info['0']['birthday'])</php>
+                                                    </td>
+                                                    </if>
+                                                </tr>
+                                                <tr>
+                                                    <td>原就读学校：</td>
+                                                    <if condition="$student_info['0']['organname'] eq ''" >
+                                                        <td>无</td>
+                                                        <else /><td>{$student_info['0']['organname']}</td>
+                                                    </if>
+                                                </tr>
+                                                <tr>
+                                                    <td>身份证号码：</td>
+                                                    <if condition="$student_info['0']['id_num'] eq ''" >
+                                                        <td>无</td>
+                                                        <else /><td>{$student_info['0']['id_num']}</td>
+                                                    </if>
+                                                </tr>
+                                                <tr>
+                                                    <td>学籍号：</td>
+                                                    <if condition="$student_info['0']['sid_num'] eq ''" >
+                                                        <td>无</td>
+                                                        <else /><td>{$student_info['0']['sid_num']}</td>
+                                                    </if>
+                                                </tr>
+                                                <tr>
+                                                    <td>民族：</td>
+                                                    <if condition="$student_info['0']['nation'] eq ''" >
+                                                        <td>无</td>
+                                                        <else /><td>{$student_info['0']['nation']}</td>
+                                                    </if>
+                                                </tr>
+                                                <tr>
+                                                    <td>户口所在地：</td>
+                                                    <if condition="$student_info['0']['account'] eq ''" >
+                                                        <td>无</td>
+                                                        <else /><td>{$student_info['0']['account']}</td>
+                                                    </if>
+                                                </tr>
+                                                <tr>
+                                                    <td>家庭住址：</td>
+                                                    <if condition="$student_info['0']['address'] eq ''" >
+                                                        <td>无</td>
+                                                        <else /><td>{$student_info['0']['address']}</td>
+                                                    </if>
+                                                </tr>
+                                                <tr>
+                                                    <td>电话：</td>
+                                                    <if condition="$student_info['0']['phone'] eq ''" >
+                                                        <td>无</td>
+                                                        <else /><td>{$student_info['0']['phone']}</td>
+                                                    </if>
+                                                </tr>
+                                                <tr>
+                                                    <td>邮箱：</td>
+                                                    <if condition="$student_info['0']['email'] eq ''" >
+                                                        <td>无</td>
+                                                        <else /><td>{$student_info['0']['email']}</td>
+                                                    </if>
+                                                </tr>
+                                                <tr>
+                                                    <td>生源类型：</td>
+                                                    <if condition="$student_info['0']['origin'] eq ''" >
+                                                        <td>无</td>
+                                                        <else /><td>{$student_info['0']['origin']}</td>
+                                                    </if>
+                                                </tr>
+                                                <tr>
+                                                    <td>房产证编号：</td>
+                                                    <if condition="$student_info['0']['house'] eq ''" >
+                                                        <td>无</td>
+                                                        <else /><td>{$student_info['0']['house']}</td>
+                                                    </if>
+                                                <tr>
+                                                    <td>房产地址：</td>
+                                                    <if condition="$student_info['0']['house_address'] eq ''" >
+                                                        <td>无</td>
+                                                        <else /><td>{$student_info['0']['house_address']}</td>
+                                                    </if>
+                                                </tr>
+                                                <tr>
+                                                    <td>房产所有人及共有人：</td>
+                                                    <if condition="$student_info['0']['house_owners'] eq ''" >
+                                                        <td>无</td>
+                                                        <else /><td>{$student_info['0']['house_owners']}</td>
+                                                    </if>
+                                                </tr>
+                                                <tr>
+                                                    <td>房产证户主与孩子关系：</td>
+                                                    <if condition="$student_info['0']['house_relations'] eq ''" >
+                                                        <td>无</td>
+                                                        <else /><td>{$student_info['0']['house_relations']}</td>
+                                                    </if>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </ul>
+                                    <div style="height: 12px;"></div>
+                                </div>
+                                <div class="mail-sidebar" style="width: 11%;border-right: 0;">
+                                    <img style="width:100%;" src="__ROOT__/Uploads/{$student_info['0']['picture']}">
+                                </div>
+                            </if>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" value="__URL__" id="url">
+
+</block>
+
+<block name="script">
+    <script src="__PUBLIC__/assets/js/skins.min.js"></script>
+</block>

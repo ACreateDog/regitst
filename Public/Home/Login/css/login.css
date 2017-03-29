@@ -1,0 +1,44 @@
+#system_title {
+    color: #fff;
+    font-size: 56px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 6%;
+    text-align: center;
+}
+.float_class {
+    top: -85px;;
+}
+#system_main {
+    width: 100%;
+    text-align: center;
+    color: aliceblue;
+    font-size: 22px;
+    margin-top: -13%;
+}
+
+@media screen and (max-width:600px){
+    #system_title {
+        color: #fff;
+        font-size: 30px;
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 20%;
+        text-align: center;
+    }
+    .float_class {
+        top: -10px;
+    }
+    #system_main {
+        width: 100%;
+        text-align: center;
+        color: aliceblue;
+        font-size: 22px;
+        margin-top: -6%;
+    }
+}
+
+.loginbox-textbox p img {
+    width: 65%;
+    margin-top: 10px;
+}

@@ -1,0 +1,465 @@
+<extend name="Base:base"/>
+
+<!--页面标题-->
+<block name="title">小升初::父母信息</block>
+<block name="link">
+    <link href="__PUBLIC__/assets/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="__PUBLIC__/Home/Register/css/register.css" rel="stylesheet" />
+</block>
+<!--面包屑导航-->
+<block name="breadcrumb">
+    <li class="active">{$type}</li>
+</block>
+
+<!--页面内容-->
+<block name="page-body">
+    <div id="type_id" style="height: auto;" type_id="{$type_id}">
+        <!--index-->
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="widget">
+                    <div class="widget-body">
+                        <if condition="$info eq 0">
+                            <div class="btn-group">
+                                <a class="btn btn-default" disabled="true">
+                                    <i class="fa fa-download"></i>
+                                    下载
+                                </a>
+                            </div>
+                            <else />
+                            <div class="btn-group">
+                                <a class="btn btn-default" href="{:U('Register/get_export_data_parent')}">
+                                    <i class="fa fa-download"></i>
+                                    下载
+                                </a>
+                            </div>
+                        </if>
+                        <div id="export-html" class="mail-container" style="top:12px;">
+                            <div class="mail-body" style="margin-left:0px;">
+                                <ul class="mail-list">
+                                    <if condition="$info eq 0">
+                                        <li class="list-item">
+                                            <div class="item-sender" style="width: 30%;">
+                                                你的信息还没有被录入，请联系学校1。
+                                            </div>
+                                        </li>
+                                        <else />
+                                            <if condition="$count eq 1">
+                                                <switch name="info['0']['status']">
+                                                    <case value="0" break="1">
+                                                        <table class="table table-hover">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="font-size: 20px;color: royalblue;">父亲信息</td>
+                                                                    <td></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>姓名：</td>
+                                                                    <td>{$info[0]['name']}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>身份证号：</td>
+                                                                    <if condition="$info[0]['id_num'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[0]['id_num']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>工作单位：</td>
+                                                                    <if condition="$info[0]['workunit'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[0]['workunit']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>职业：</td>
+                                                                    <if condition="$info[0]['occupation'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[0]['occupation']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>手机号码：</td>
+                                                                    <td>{$info[0]['phone']}</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </case>
+                                                    <case value="1" break="1">
+                                                        <table class="table table-hover">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="font-size: 20px;color: royalblue;">母亲信息</td>
+                                                                    <rd></rd>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>姓名：</td>
+                                                                    <rd>{$info[0]['name']}</rd>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>身份证号：</td>
+                                                                    <if condition="$info[0]['id_num'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[0]['id_num']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>工作单位：</td>
+                                                                    <if condition="$info[0]['workunit'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[0]['workunit']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>职业：</td>
+                                                                    <if condition="$info[0]['occupation'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[0]['occupation']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>手机号码：</td>
+                                                                    <rd>{$info[0]['phone']}</rd>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </case>
+                                                    <case value="2" break="1">
+                                                        <table class="table table-hover">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="font-size: 20px;color: royalblue;">监护人信息</td>
+                                                                    <td></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>姓名：</td>
+                                                                    <td>{$info[0]['name']}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>身份证号：</td>
+                                                                    <if condition="$info[0]['id_num'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[0]['id_num']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>工作单位：</td>
+                                                                    <if condition="$info[0]['workunit'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[0]['workunit']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>职业：</td>
+                                                                    <if condition="$info[0]['occupation'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[0]['occupation']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>手机号码：</td>
+                                                                    <td>{$info[0]['phone']}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>与学生关系：</td>
+                                                                    <if condition="$info[0]['relations'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[0]['relations']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </case>
+                                                    <default />
+                                                    <li class="list-item">
+                                                        <div class="item-sender" style="width: 30%;">
+                                                            你的信息还没有被录入，请联系学校2。
+                                                        </div>
+                                                    </li>
+                                                </switch>
+                                            <elseif condition="$count eq 2" />
+                                                <foreach name="info" item="vo" key="k">
+                                                    <if condition="$info[$k]['status'] eq '0'">
+                                                        <table class="table table-hover">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="font-size: 20px;color: royalblue;">父亲信息</td>
+                                                                    <td></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>姓名：</td>
+                                                                    <td>{$info[$k]['name']}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>身份证号：</td>
+                                                                    <if condition="$info[$k]['id_num'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[$k]['id_num']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>工作单位：</td>
+                                                                    <if condition="$info[$k]['workunit'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[$k]['workunit']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>职业：</td>
+                                                                    <if condition="$info[$k]['occupation'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[$k]['occupation']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>手机号码：</td>
+                                                                    <td>{$info[$k]['phone']}</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    <elseif condition="$info[$k]['status'] eq '1'" />
+                                                        <table class="table table-hover">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="font-size: 20px;color: royalblue;">母亲信息</td>
+                                                                    <td></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>姓名：</td>
+                                                                    <td>{$info[$k]['name']}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>身份证号：</td>
+                                                                    <if condition="$info[$k]['id_num'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[$k]['id_num']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>工作单位：</td>
+                                                                    <if condition="$info[$k]['workunit'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[$k]['workunit']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>职业：</td>
+                                                                    <if condition="$info[$k]['occupation'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[$k]['occupation']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>手机号码：</td>
+                                                                    <td>{$info[$k]['phone']}</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    <elseif condition="$info[$k]['status'] eq '2'" />
+                                                        <table class="table table-hover">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="font-size: 20px;color: royalblue;">监护人信息</td>
+                                                                    <td></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>姓名：</td>
+                                                                    <td>{$info[$k]['name']}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>身份证号：</td>
+                                                                    <if condition="$info[$k]['id_num'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[$k]['id_num']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>工作单位：</td>
+                                                                    <if condition="$info[$k]['workunit'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[$k]['workunit']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>职业：</td>
+                                                                    <if condition="$info[$k]['occupation'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[$k]['occupation']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>手机号码：</td>
+                                                                    <td>{$info[$k]['phone']}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>与学生关系：</td>
+                                                                    <if condition="$info[$k]['relations'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[$k]['relations']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    <else />
+                                                        <li class="list-item">
+                                                            <div class="item-sender" style="width: 30%;">
+                                                                你的信息还没有被录入，请联系学校。
+                                                            </div>
+                                                        </li>
+                                                    </if>
+                                                </foreach>
+                                            <elseif condition="$count eq 3" />  <!--有三条记录-->
+                                                <foreach name="info" item="vo" key="k">
+                                                    <if condition="$info[$k]['status'] eq '0'">
+                                                        <table class="table table-hover">
+                                                            <tbody>
+                                                            <tr>
+                                                                <td style="font-size: 20px;color: royalblue;">父亲信息</td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>姓名：</td>
+                                                                <td>{$info[$k]['name']}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>身份证号：</td>
+                                                                <if condition="$info[$k]['id_num'] eq ''" >
+                                                                    <td>无</td>
+                                                                    <else /><td>{$info[$k]['id_num']}</td>
+                                                                </if>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>工作单位：</td>
+                                                                <if condition="$info[$k]['workunit'] eq ''" >
+                                                                    <td>无</td>
+                                                                    <else /><td>{$info[$k]['workunit']}</td>
+                                                                </if>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>职业：</td>
+                                                                <if condition="$info[$k]['occupation'] eq ''" >
+                                                                    <td>无</td>
+                                                                    <else /><td>{$info[$k]['occupation']}</td>
+                                                                </if>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>手机号码：</td>
+                                                                <td>{$info[$k]['phone']}</td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <elseif condition="$info[$k]['status'] eq '1'" />
+                                                        <table class="table table-hover">
+                                                            <tbody>
+                                                            <tr>
+                                                                <td style="font-size: 20px;color: royalblue;">母亲信息</td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>姓名：</td>
+                                                                <td>{$info[$k]['name']}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>身份证号：</td>
+                                                                <if condition="$info[$k]['id_num'] eq ''" >
+                                                                    <td>无</td>
+                                                                    <else /><td>{$info[$k]['id_num']}</td>
+                                                                </if>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>工作单位：</td>
+                                                                <if condition="$info[$k]['workunit'] eq ''" >
+                                                                    <td>无</td>
+                                                                    <else /><td>{$info[$k]['workunit']}</td>
+                                                                </if>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>职业：</td>
+                                                                <if condition="$info[$k]['workunit'] eq ''" >
+                                                                    <td>无</td>
+                                                                    <else /><td>{$info[$k]['occupation']}</td>
+                                                                </if>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>手机号码：</td>
+                                                                <td>{$info[$k]['phone']}</td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <elseif condition="$info[$k]['status'] eq '2'" />
+                                                        <table class="table table-hover">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="font-size: 20px;color: royalblue;">监护人信息</td>
+                                                                    <td></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>姓名：</td>
+                                                                    <td>{$info[$k]['name']}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>身份证号：</td>
+                                                                    <if condition="$info[$k]['id_num'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[$k]['id_num']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>工作单位：</td>
+                                                                    <if condition="$info[$k]['workunit'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[$k]['workunit']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>职业：</td>
+                                                                    <if condition="$info[$k]['occupation'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[$k]['occupation']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>手机号码：</td>
+                                                                    <td>{$info[$k]['phone']}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>与学生关系：</td>
+                                                                    <if condition="$info[$k]['relations'] eq ''" >
+                                                                        <td>无</td>
+                                                                        <else /><td>{$info[$k]['relations']}</td>
+                                                                    </if>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <else />
+                                                        <li class="list-item">
+                                                            <div class="item-sender" style="width: 30%;">
+                                                                你的信息还没有被录入，请联系学校。
+                                                            </div>
+                                                        </li>
+                                                    </if>
+                                                </foreach>
+                                            <else />
+                                                <li class="list-item">
+                                                    <div class="item-sender" style="width: 30%;">
+                                                        你的信息还没有被录入，请联系学校。
+                                                    </div>
+                                                </li>
+                                            </if>
+                                    </if>
+                                </ul>
+                                <div style="height: 12px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" value="__URL__" id="url">
+
+</block>
+
+<block name="script">
+    <script src="__PUBLIC__/assets/js/skins.min.js"></script>
+</block>
